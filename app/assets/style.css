@@ -1,0 +1,28 @@
+section.pad {
+  padding-inline: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  section.pad {
+    padding-inline: 100px;
+  }
+}
+.bb {
+  margin-bottom: 1px;
+}
+.bb:hover {
+  color: theme("colors.primary");
+  border-bottom: 1px solid theme("colors.primary");
+}
+
+@font-face {
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("~/assets/font/Satoshi-Variable.ttf") format("truetype");
+}
+
+* {
+  font-family: "Satoshi", Inter, system-ui, sans-serif;
+}

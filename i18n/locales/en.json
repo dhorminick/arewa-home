@@ -1,0 +1,23 @@
+{
+  "app": {
+    "test": "Test",
+    "book-demo": "Book a Demo"
+  },
+  "header": {
+    "home": "Home",
+    "about-us": "About Us",
+    "products": "Our Products",
+    "faqs": "FAQ's",
+    "contact-us": "Contact Us"
+  },
+  "footer": {
+    "home": "Home",
+    "about-us": "About Us",
+    "products": "Our Products",
+    "faqs": "FAQ's",
+    "contact-us": "Contact Us",
+    "privacy-policy": "Privacy Policy",
+    "terms": "Terms of service",
+    "hippa": "HIPAA Compliance"
+  }
+}
