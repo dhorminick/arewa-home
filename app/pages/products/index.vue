@@ -18,7 +18,8 @@
                 </div>
             </div>
             <div>
-                <img :src="item.image" :alt="item.header" class="w-full h-[500px] rounded-[10px]" />
+                <NuxtImg :src="item.image" :alt="item.header" class="w-full h-[500px] rounded-[10px]" preload />
+                <!-- <img :src="item.image" :alt="item.header" class="w-full h-[500px] rounded-[10px]" /> -->
             </div>
         </div>
     </section>

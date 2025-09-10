@@ -5,7 +5,12 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   css: ["primeicons/primeicons.css", "@/assets/style.css"],
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/i18n", "@primevue/nuxt-module"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/i18n",
+    "@primevue/nuxt-module",
+    "@nuxt/image",
+  ],
   i18n: {
     defaultLocale: "en",
     locales: [{ code: "en", name: "English", file: "en.json" }],

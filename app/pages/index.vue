@@ -1,5 +1,5 @@
 <template>
-    <section class="flex items-center w-full bg-primary h-[83dvh]">
+    <section class="pad flex items-center w-full bg-primary h-[83dvh]">
         <div class="sm:w-[55%] h-full sm:pt-[100px] px-[50px] w-full flex flex-col gap-[10px] text-white">
             <TextLabel text="Arewa health" />
             <h1 class="font-[700] text-6xl mb-[30px] text-left">Transforming healthcare management with innovative
@@ -13,7 +13,8 @@
             </div>
         </div>
         <div class="flex justify-center items-center flex-1">
-            <img src="/images/blank.png" class="h-[510px] rounded-full w-[550px] object-center" />
+            <NuxtImg src="/images/blank.png" class="h-[510px] rounded-full w-[550px] object-center" preload />
+            <!-- <img src="/images/blank.png" class="h-[510px] rounded-full w-[550px] object-center" /> -->
         </div>
     </section>
     <TextCTA header="Book a Demo" description="Are you ready to change the future of pregnancy documentation?"

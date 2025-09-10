@@ -15,7 +15,22 @@
             <div>
                 <!-- <img src="/images/blank.png" class="w-full h-[500px] rounded-[10px]" /> -->
                 <div class="grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-3 gap-8">
-                    <img src="/images/blank.png"
+                    <NuxtImg src="/images/blank.png"
+                        class="w-44 h-[150px] rounded-2xl object-cover md:mt-20 mx-auto min-[450px]:mr-0" preload />
+                    <NuxtImg src="/images/blank.png"
+                        class="w-44 h-[150px] rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mx-auto" preload />
+                    <NuxtImg src="/images/blank.png"
+                        class="w-44 h-[150px] rounded-2xl object-cover md:mt-20 mx-auto min-[450px]:mr-0 md:ml-0"
+                        preload />
+                    <NuxtImg src="/images/blank.png"
+                        class="w-44 h-[150px] rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mr-0 md:ml-auto"
+                        preload />
+                    <NuxtImg src="/images/blank.png"
+                        class="w-44 h-[150px] rounded-2xl object-cover md:-mt-20 mx-auto min-[450px]:mr-0 md:mx-auto"
+                        preload />
+                    <NuxtImg src="/images/blank.png"
+                        class="w-44 h-[150px] rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mr-0" preload />
+                    <!-- <img src="/images/blank.png"
                         class="w-44 h-[150px] rounded-2xl object-cover md:mt-20 mx-auto min-[450px]:mr-0" />
                     <img src="/images/blank.png"
                         class="w-44 h-[150px] rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mx-auto" />
@@ -26,7 +41,7 @@
                     <img src="/images/blank.png"
                         class="w-44 h-[150px] rounded-2xl object-cover md:-mt-20 mx-auto min-[450px]:mr-0 md:mx-auto" />
                     <img src="/images/blank.png"
-                        class="w-44 h-[150px] rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mr-0" />
+                        class="w-44 h-[150px] rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mr-0" /> -->
 
                 </div>
             </div>
@@ -56,8 +71,10 @@
         </div>
         <div class="row_container border">
             <div class="column" v-for="(item, idx) in gallery" :key="idx">
-                <img v-for="(i, idx) in item.img" :key="idx" alt="Gallery Image" :src="i" class="w-[100%]"
-                    loading="lazy" />
+                <!-- <img v-for="(i, idx) in item.img" :key="idx" alt="Gallery Image" :src="i" class="w-[100%]"
+                    loading="lazy" /> -->
+                <NuxtImg v-for="(i, idx) in item.img" :key="idx" alt="Gallery Image" :src="i" class="w-[100%]"
+                    preload />
             </div>
         </div>
     </section>
