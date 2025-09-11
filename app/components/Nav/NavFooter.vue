@@ -45,7 +45,7 @@ const links = computed(() => [
             { title: t('footer.home'), url: '/' },
             { title: t('footer.about-us'), url: '/about-us/' },
             { title: t('footer.products'), url: '/products/' },
-            { title: t('footer.faqs'), url: '/' },
+            { title: t('footer.faqs'), url: '/#faqs' },
             { title: t('footer.contact-us'), url: '/contact-us/' },
         ]
     },

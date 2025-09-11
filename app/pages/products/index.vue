@@ -13,8 +13,10 @@
                     <p class="text-justify" v-for="(i, idx_i) in item.summary" :key="idx_i">{{ i }}</p>
                 </div>
                 <div class="mt-[50px]">
-                    <ButtonCustom label="Read More" primary="true" input-class="w-max" size="lg" icon="angle-right"
-                        @clicked="navigateTo(item.url)" />
+                    <NuxtLink :to="item.url">
+                        <ButtonCustom label="Learn More" primary="true" input-class="w-max" size="lg"
+                            icon="angle-right" />
+                    </NuxtLink>
                 </div>
             </div>
             <div>

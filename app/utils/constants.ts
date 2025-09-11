@@ -44,6 +44,19 @@ export const ProductsData = [
           "Monitor your menstrual cycle to better understand your reproductive health. Use it for family planning or to keep track of cycle-related health changes.",
       },
     ],
+    cta: {
+      header: "Experience Pregnancy Care Like Never Before",
+      description:
+        "Step into the future of maternal health with AREWA Health. Discover how our intuitive platform empowers expectant mothers and healthcare providers with smart tracking, secure communication, and personalized insights. Schedule a live demo and see how AREWA Health can transform your pregnancy journey—one tap at a time.",
+    },
+    images: [
+      "/images/product/arewa-01.avif",
+      "/images/product/arewa-02.avif",
+      "/images/product/arewa-03.webp",
+      "/images/product/arewa-04.webp",
+      "/images/product/arewa-05.webp",
+      "/images/product/arewa-06.webp",
+    ],
   },
   {
     tag: "IPD",
@@ -88,6 +101,19 @@ export const ProductsData = [
         description:
           "Understand potential pregnancy risks with clear explanations of relevant medical terms. Stay informed to support proactive care and decision-making.",
       },
+    ],
+    cta: {
+      header: "Reimagine Pregnancy Documentation",
+      description:
+        "Discover how the IPD revolutionizes maternal care with streamlined records, smart scheduling, and collaborative insights. See firsthand how our secure digital framework empowers both mothers and healthcare providers to make informed decisions with clarity and confidence. Schedule your demo now and explore the future of pregnancy management.",
+    },
+    images: [
+      "/images/product/ipd-01.avif",
+      "/images/product/ipd-02.avif",
+      "/images/product/ipd-03.avif",
+      "/images/product/ipd-04.avif",
+      "/images/product/ipd-05.avif",
+      "/images/product/ipd-06.avif",
     ],
   },
 ];
