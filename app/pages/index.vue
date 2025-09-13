@@ -22,9 +22,15 @@
             </div>
         </div>
         <div class="hidden justify-center items-center flex-1 relative sm:flex">
-            <NuxtImg src="/images/hero.avif" class="h-full ..rounded-full w-full object-center" preload />
+            <NuxtImg src="/images/hero.avif" placeholder="blur" class="h-full ..rounded-full w-full object-center"
+                preload :custom="true" v-slot="{ src, isLoaded, imgAttrs }">
+                <img v-if="isLoaded" v-bind="imgAttrs" :src="src">
+
+                <!-- Show a placeholder while loading -->
+                <img v-else src="/images/blur-img.jpg" alt="Image">
+            </NuxtImg>
             <div
-                class="rounded-[10px] p-[10px] bg-white flex flex-col justify-center items-center gap-[5px] absolute bottom-[70px] left-0">
+                class="rounded-[10px] p-[15px] bg-white flex flex-col justify-center items-center absolute bottom-[70px] left-0">
                 Dr. Oyedupe O. Gläsmann
                 <div class="text-secondary">Gynecologist & Co-Founder</div>
             </div>
