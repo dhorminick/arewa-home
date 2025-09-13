@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white w-full shadow-md border py-[60px] px-[100px]">
+    <div class="bg-white w-full shadow-md border py-[60px] px-[20px] sm:px-[100px]">
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-[20px]">
             <div>
                 <div class="text-[150%] uppercase font-bold">Arewa Health</div>
@@ -12,7 +12,7 @@
                 </form>
             </div>
             <div class="col-span-2">
-                <div class="w-full grid grid-cols-2 sm:grid-cols-3">
+                <div class="w-full grid grid-cols-2 sm:grid-cols-3 sm:gap-0 gap-[20px]">
                     <div v-for="(item, idx) in links" :key="idx">
                         <div class="text-[110%] font-bold uppercase mb-[20px]">{{ item.title }}</div>
                         <div class="flex flex-col gap-[10px] sidebar_urls">
@@ -26,7 +26,7 @@
             </div>
         </div>
         <hr class="mt-[100px] mb-[20px]">
-        <div class="flex items-center justify-between gap-[10px]">
+        <div class="flex sm:flex-row flex-col items-center justify-between gap-[10px]">
             <div class="flex gap-[10px]">
                 <NuxtLink v-for="(item, idx) in socials" :key="idx" :to="item.url">
                     <i :class="`text-[20px] p-[5px] rounded-sm pi pi-${item.icon}`"></i>

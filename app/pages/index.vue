@@ -1,14 +1,17 @@
 <template>
     <section class="pad flex items-center w-full bg-primary h-[83dvh]">
-        <div class="sm:w-[60%] h-full sm:pt-[100px] w-full flex flex-col gap-[10px] text-white">
+        <div class="sm:w-[60%] h-full sm:pt-[100px] pt-[30px] w-full flex flex-col gap-[10px] text-white">
             <TextLabel text="Arewa health" />
-            <h1 class="font-[700] text-6xl mb-[30px] text-left">Transforming <span
-                    class="text-secondary uppercase">healthcare</span> management with
+            <h1 class="font-[700] text-5xl sm:text-6xl mb-[10px] sm:mb-[30px] text-center sm:text-left">Transforming
+                <span class="text-secondary uppercase">healthcare</span> management with
                 innovative
-                solutions.</h1>
-            <div>The global, digital, and standardized documentation system for a healthy and safe pregnancy.</div>
+                solutions.
+            </h1>
+            <div class="text-center sm:text-left">The global, digital, and standardized documentation system for a
+                healthy and safe pregnancy.</div>
 
-            <div class="flex gap-[10px] mt-[50px]">
+            <div
+                class="flex gap-[10px] mt-[30px] sm:mt-[50px] sm:justify-start sm:items-start justify-center items-center">
                 <NuxtLink :to="booking_url" target="_blank">
                     <ButtonCustom label="Book a Demo" size="lg" rounded="true" input-class="w-max border-white border"
                         primary="true" />
@@ -18,8 +21,13 @@
                 </NuxtLink>
             </div>
         </div>
-        <div class="flex justify-center items-center flex-1">
-            <NuxtImg src="/images/hero.jpg" class="h-[510px] rounded-full w-[550px] object-center" preload />
+        <div class="hidden justify-center items-center flex-1 relative sm:flex">
+            <NuxtImg src="/images/hero.avif" class="h-full ..rounded-full w-full object-center" preload />
+            <div
+                class="rounded-[10px] p-[10px] bg-white flex flex-col justify-center items-center gap-[5px] absolute bottom-[70px] left-0">
+                Dr. Oyedupe O. Gläsmann
+                <div class="text-secondary">Gynecologist & Co-Founder</div>
+            </div>
         </div>
     </section>
 
