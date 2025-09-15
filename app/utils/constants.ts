@@ -2,7 +2,7 @@ export const ProductsData = [
   {
     tag: "Arewa App",
     header: "Arewa App",
-    image: "/images/arewa-app.png",
+    image: "/images/arewa-app/Home screen.png",
     url: "/products/arewa-app",
     summary: [
       "AREWA Health is your complete digital companion for every stage of your pregnancy journey — from preparation to postpartum care. Designed with both mothers and healthcare providers in mind, our app combines powerful tracking tools, secure medical communication, and educational resources into one easy-to-use platform.",
@@ -68,7 +68,7 @@ export const ProductsData = [
   {
     tag: "IPD",
     header: "International Pregnancy Document",
-    image: "/images/ipd.jpeg",
+    image: "/images/ipd/Pregnancy Risks.png",
     url: "/products/ipd",
     summary: [
       "The International Pregnancy Document (IPD) is a complete digital framework that transforms how pregnancy information is documented, managed, and shared. Designed for both expectant mothers and healthcare professionals, it centralizes structured medical records, lifestyle tracking, and personalized counseling into one secure platform. With tools for real-time data capture, smart appointment scheduling, and visual progress analysis, the IPD ensures that every stage of pregnancy is clearly organized and easy to follow.",

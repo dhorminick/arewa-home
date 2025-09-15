@@ -2,7 +2,7 @@
     <div
         class="p-[50px] sm:p-[110px] bg-light shadow-lg rounded-b-[10px] mb-[20px] flex flex-col justify-center items-center">
         <div class="text-[70%] mb-[20px] flex gap-[10px]">
-            <NusxLink to="/">Home</NusxLink> <span>|</span> <span>{{ page }}</span>
+            <NuxtLink to="/">Home</NuxtLink> <span>|</span> <span>{{ page }}</span>
         </div>
         <h2 class="font-bold text-[45px] sm:text-5xl mb-[10px]">{{ header }}</h2>
         <div>

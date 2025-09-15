@@ -12,11 +12,13 @@ export default defineNuxtConfig({
     "@nuxt/image",
   ],
   i18n: {
-    vueI18n: "./i18n.config.ts",
+    // vueI18n: "./i18n.config.ts",
     defaultLocale: "en",
-    locales: [{ code: "en", name: "English", file: "en.json" }],
-    langDir: "locales/",
-    strategy: "no_prefix",
+    locales: [
+      { code: "en", language: "en-US", name: "English", file: "en.json" },
+    ],
+    // langDir: "locales/",
+    // strategy: "no_prefix",
   },
   primevue: {
     options: {

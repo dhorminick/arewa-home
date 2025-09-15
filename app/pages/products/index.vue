@@ -20,8 +20,14 @@
                 </div>
             </div>
             <div>
-                <NuxtImg :src="item.image" :alt="item.header" class="w-full h-[500px] rounded-[10px]" preload />
-                <!-- <img :src="item.image" :alt="item.header" class="w-full h-[500px] rounded-[10px]" /> -->
+                <div v-if="idx === 0" class="gap-[10px] w-full grid sm:grid-cols-2">
+                    <NuxtImg :src="item.images[6]" :alt="item.header"
+                        class="w-full max-h-[500px] object-contan rounded-[10px]" preload />
+                    <NuxtImg :src="item.images[11]" :alt="item.header"
+                        class="w-full sm:block hidden max-h-[500px] object-contan rounded-[10px]" preload />
+                </div>
+                <NuxtImg v-else :src="item.image" :alt="item.header" class="max-h-[500px] object-contan rounded-[10px]"
+                    preload />
             </div>
         </div>
     </section>

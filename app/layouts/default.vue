@@ -1,6 +1,8 @@
 <template>
     <div class="flex flex-col min-h-[100dvh]">
-        <NavHeader />
+        <ClientOnly>
+            <NavHeader />
+        </ClientOnly>
         <div class="flex-1 h-full mt-[90px]">
             <slot />
         </div>
