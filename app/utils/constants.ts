@@ -131,3 +131,11 @@ export const ProductsData = [
 ];
 
 export const booking_url = "https://dev.arewa-health.com/category/onboarding/";
+export const EMAIL = "contact@arewa-health.com";
+export const CONTACT_EMAIL = "contact@arewa-health.com";
+export const ADDRESS = "Gartenstr, 19 14169 Berlin, Germany";
+export const INSTAGRAM = "https://www.instagram.com/arewa.care/";
+export const FACEBOOK =
+  "https://www.facebook.com/profile.php?id=61567830195543";
+export const TIKTOK = "https://www.tiktok.com/@arewa.care";
+export const WHATSAPP = "https://whatsapp.com/channel/0029VbBEmg5DTkJxERGKCn37";

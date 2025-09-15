@@ -26,6 +26,8 @@
 </template>
 
 <script setup>
+import { ADDRESS, CONTACT_EMAIL } from '~/utils/constants';
+
 const contact = ref({
     name: '',
     telephone: '',
@@ -36,8 +38,8 @@ const contact = ref({
 
 const more = [
     { icon: 'phone', value: '+1-000-000-000', url: 'tel:+1-000-000-000' },
-    { icon: 'envelope', value: 'contact@arewa-health.com', url: 'mailto:contact@arewa-health.com' },
-    { icon: 'map-marker', value: 'Gartenstraße 19, 14169 Berlin', url: 'https://maps.app.goo.gl/sve7aDCxZkVaM5by8' },
+    { icon: 'envelope', value: CONTACT_EMAIL, url: `mailto:${CONTACT_EMAIL}` },
+    { icon: 'map-marker', value: ADDRESS, url: 'https://maps.app.goo.gl/sve7aDCxZkVaM5by8' },
 ]
 </script>
 <style scoped>

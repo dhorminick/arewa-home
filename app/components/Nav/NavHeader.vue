@@ -58,6 +58,8 @@
 </template>
 
 <script setup>
+import { CONTACT_EMAIL } from '~/utils/constants';
+
 const { t } = useI18n();
 const localePath = useLocalePath();
 
@@ -70,7 +72,7 @@ const links = computed(() => [
     { title: t('header.contact-us'), to: localePath('/contact-us/') },
 ])
 const heading = [
-    { title: 'email@email.com', url: 'mailto:email@email.com' },
+    { title: CONTACT_EMAIL, url: `mailto:${CONTACT_EMAIL}` },
     { title: '+1-000-000-0000', url: 'tel:+1-000-000-0000' }
 ]
 const isScrolled = ref(false)

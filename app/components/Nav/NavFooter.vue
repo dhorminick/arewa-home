@@ -38,6 +38,8 @@
 </template>
 
 <script setup>
+import { FACEBOOK, INSTAGRAM, TIKTOK, WHATSAPP } from '~/utils/constants';
+
 const { t } = useI18n();
 const links = computed(() => [
     {
@@ -64,10 +66,10 @@ const links = computed(() => [
 
 ])
 const socials = [
-    { icon: 'youtube', url: '/', color: '#008000' },
-    { icon: 'twitter', url: '/', color: '#008000' },
-    { icon: 'facebook', url: '/', color: '#008000' },
-    { icon: 'instagram', url: '/', color: '#008000' },
+    { icon: 'tiktok', url: TIKTOK, color: '#008000' },
+    { icon: 'whatsapp', url: WHATSAPP, color: '#008000' },
+    { icon: 'facebook', url: FACEBOOK, color: '#008000' },
+    { icon: 'instagram', url: INSTAGRAM, color: '#008000' },
 ]
 
 const email = ref('');
