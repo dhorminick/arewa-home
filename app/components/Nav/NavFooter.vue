@@ -5,10 +5,14 @@
                 <div class="text-[150%] uppercase font-bold">Arewa Health</div>
                 <div>Transforming healthcare management with innovative solutions.</div>
 
-                <form class="flex gap-[5px] items-center mt-[30px] w-full">
-                    <InputTextCustom v-model="email" placeholder="Email Address..." input-class="!mb-0"
-                        label="Sign up for newsletter:" />
-                    <ButtonCustom icon="send" input-class="w-max !p-[12px] !mt-[23px]" primary=" true" />
+                <form class="flex gap-[5px] items-center mt-[30px] w-full"
+                    @submit.prevent="subscribeToNewsletter(e, crsf)">
+                    <InputTextCustom v-model="e" placeholder="Email Address..." input-class="!mb-0"
+                        label="Sign up for newsletter:" required="true" />
+                    <input type="text" :v-model="crsf" autocomplete="off" tabindex="-1"
+                        style="position: absolute; left: -9999px;">
+
+                    <ButtonCustom icon="send" type="submit" input-class="w-max !p-[12px] !mt-[23px]" primary=" true" />
                 </form>
             </div>
             <div class="col-span-2">
@@ -40,6 +44,7 @@
 <script setup>
 import { FACEBOOK, INSTAGRAM, TIKTOK, WHATSAPP } from '~/utils/constants';
 
+const toast = useToast()
 const { t } = useI18n();
 const links = computed(() => [
     {
@@ -72,7 +77,77 @@ const socials = [
     { icon: 'instagram', url: INSTAGRAM, color: '#008000' },
 ]
 
-const email = ref('');
+const e = ref('');
+const crsf = ref(null)
+
+const subscribeToNewsletter = async (email, c) => {
+    if (c !== null) {
+        toast.add({
+            severity: 'error',
+            summary: 'ERROR', detail: "An error occured", life: 3000
+        });
+        return;
+    }
+
+    if (!email || email === null) {
+        // error
+        toast.add({
+            severity: 'error',
+            summary: 'ERROR', detail: "Please add a valid email address!", life: 3000
+        });
+        return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isValidEmail = emailRegex.test(email);
+
+    if (!isValidEmail) {
+        //error
+        toast.add({
+            severity: 'error',
+            summary: 'ERROR', detail: "Please add a valid email address!", life: 3000
+        });
+        return;
+    }
+
+
+    try {
+        const response = await fetch("https://api.dev.arewa-health.com/newsletter", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email: email, crsf: c }),
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+            toast.add({
+                severity: 'success',
+                summary: 'SUCCESS', detail: data.message || 'Email registered successfully!', life: 3000
+            });
+
+
+        } else {
+            toast.add({
+                severity: 'error',
+                summary: 'ERROR', detail: data.message || 'An error occured!', life: 3000
+            });
+
+        }
+
+        e.value = ''
+        crsf.value = null
+
+    } catch (error) {
+        console.error("Error subscribing:", error);
+    }
+};
+
+onBeforeMount(() => {
+    e.value = ''
+    crsf.value = null
+})
 </script>
 <style scoped>
 .sidebar_urls a {

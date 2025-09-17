@@ -7,3 +7,11 @@ export function genRand(length = 10) {
   }
   return str;
 }
+
+export const parseDateToReadableDateString = (date: Date): string => {
+  date = new Date(date);
+  const year = date.getFullYear();
+  const month = `0${date.getMonth() + 1}`.slice(-2);
+  const day = `0${date.getDate()}`.slice(-2);
+  return `${year}-${month}-${day}`;
+};

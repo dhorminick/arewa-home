@@ -22,13 +22,7 @@
             </div>
         </div>
         <div class="hidden justify-center items-center flex-1 relative sm:flex">
-            <NuxtImg src="/images/hero.avif" placeholder="blur" class="h-full ..rounded-full w-full object-center"
-                preload :custom="true" v-slot="{ src, isLoaded, imgAttrs }">
-                <img v-if="isLoaded" v-bind="imgAttrs" :src="src">
-
-                <!-- Show a placeholder while loading -->
-                <img v-else src="/images/blur-img.jpg" alt="Image">
-            </NuxtImg>
+            <NuxtImg src="/images/hero.avif" class="h-full ..rounded-full w-full object-center" preload />
             <div
                 class="rounded-[10px] p-[15px] bg-white flex flex-col justify-center items-center absolute bottom-[70px] left-0">
                 Dr. Oyedupe O. Gläsmann
@@ -95,7 +89,14 @@
                     </div>
                 </div>
                 <div>
-                    <NuxtImg :src="item.image" :alt="item.header" class="w-full h-[500px] rounded-[10px]" preload />
+                    <div v-if="idx === 0" class="gap-[10px] w-full grid sm:grid-cols-2">
+                        <NuxtImg :src="item.images[6]" :alt="item.header"
+                            class="w-full max-h-[500px] object-contan rounded-[10px]" preload />
+                        <NuxtImg :src="item.images[11]" :alt="item.header"
+                            class="w-full sm:block hidden max-h-[500px] object-contan rounded-[10px]" preload />
+                    </div>
+                    <NuxtImg v-else :src="item.image" :alt="item.header"
+                        class="max-h-[500px] object-contan rounded-[10px]" preload />
                 </div>
             </div>
         </div>
@@ -190,7 +191,6 @@ const projects = ref([
     {
         tag: "Arewa App",
         header: "Arewa App",
-        image: "/images/arewa-app.png",
         url: "/products/arewa-app",
         summary: 'AREWA Health is your complete digital companion for every stage of your pregnancy journey — from preparation to postpartum care.',
         features: [
@@ -198,12 +198,16 @@ const projects = ref([
             'Information brochures (text and videos) about the topic of pregnancy',
             'Pre-fill the anamnesis form digitally',
             'Have findings translated',
-        ]
+        ],
+        images: [
+            "/images/arewa-app/Home screen.png",
+            "/images/arewa-app/Pregnancy Tools.png",
+        ],
     },
     {
         tag: "IPD",
         header: "International Pregnancy Document",
-        image: "/images/ipd.jpeg",
+        image: "/images/ipd/Pregnancy Risks.png",
         url: "/products/ipd",
         summary: 'Designed for both expectant mothers and healthcare professionals, it centralizes structured medical records, lifestyle tracking, and personalized counseling into one secure platform.',
         features: [
@@ -211,7 +215,8 @@ const projects = ref([
             'Documenting medical findings',
             'Interfaces to EMR, patient records, and other practice systems',
             'Translation of findings for international patients',
-        ]
+        ],
+        images: []
     }
 ])
 

@@ -1,4 +1,5 @@
 <template>
+    <Toast />
     <div class="flex flex-col min-h-[100dvh]">
         <ClientOnly>
             <NavHeader />
