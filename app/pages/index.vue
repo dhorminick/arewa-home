@@ -21,7 +21,7 @@
                 </NuxtLink>
             </div>
         </div>
-        <div class="hidden justify-center items-center flex-1 relative sm:flex">
+        <div class="hidden justify-center items-center flex-1 relative sm:flex min-h-[400px]">
             <NuxtImg src="/images/hero.avif" class="h-full ..rounded-full w-full object-center" preload />
             <div
                 class="rounded-[10px] p-[15px] bg-white flex flex-col justify-center items-center absolute bottom-[70px] left-0">
@@ -63,7 +63,7 @@
             communication.
         </div>
 
-        <div v-for="(item, idx) in projects" :key="idx" class="py-[50px]">
+        <div v-for="(item, idx) in projects" :key="idx" class="py-[70px]">
             <div class="grid gap-[50px] grid-cols-1 sm:grid-cols-2"
                 :class="idx % 2 !== 0 ? 'sm:[&>*:first-child]:order-2 sm:[&>*:last-child]:order-1' : ''">
                 <div>
@@ -90,9 +90,9 @@
                 </div>
                 <div>
                     <div v-if="idx === 0" class="gap-[10px] w-full grid sm:grid-cols-2">
-                        <NuxtImg :src="item.images[6]" :alt="item.header"
+                        <NuxtImg :src="item.images[0]" :alt="item.header"
                             class="w-full max-h-[500px] object-contan rounded-[10px]" preload />
-                        <NuxtImg :src="item.images[11]" :alt="item.header"
+                        <NuxtImg :src="item.images[1]" :alt="item.header"
                             class="w-full sm:block hidden max-h-[500px] object-contan rounded-[10px]" preload />
                     </div>
                     <NuxtImg v-else :src="item.image" :alt="item.header"
@@ -119,7 +119,7 @@
 
         <div class="mt-[30px] mx-[10px]">
             <div class="grid gap-[20px] grid-cols-1 sm:grid-cols-2">
-                <div>
+                <div class="col-span-2">
                     <h2 class="font-bold mb-[10px] text-[150%]">{{ current_step?.header }}</h2>
                     <div>{{ current_step?.description }}</div>
                 </div>

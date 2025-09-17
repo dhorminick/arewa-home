@@ -5,44 +5,11 @@
 
     <section class="pad py-[100px]">
         <div class="grid gap-[50px] grid-cols-1 sm:grid-cols-2">
-            <div>
+            <div class="col-span-2">
                 <TextLabel text="learn about us" />
                 <h1 class="text-4xl font-bold mb-[30px] mt-[10px]">Our History</h1>
                 <div class="flex flex-col gap-[10px]">
                     <p class="text-justify" v-for="(item, idx) in history" :key="idx">{{ item }}</p>
-                </div>
-            </div>
-            <div>
-                <!-- <img src="/images/blank.png" class="w-full h-[500px] rounded-[10px]" /> -->
-                <div class="grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-3 gap-8">
-                    <NuxtImg src="/images/blank.png"
-                        class="w-44 h-[150px] rounded-2xl object-cover md:mt-20 mx-auto min-[450px]:mr-0" preload />
-                    <NuxtImg src="/images/blank.png"
-                        class="w-44 h-[150px] rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mx-auto" preload />
-                    <NuxtImg src="/images/blank.png"
-                        class="w-44 h-[150px] rounded-2xl object-cover md:mt-20 mx-auto min-[450px]:mr-0 md:ml-0"
-                        preload />
-                    <NuxtImg src="/images/blank.png"
-                        class="w-44 h-[150px] rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mr-0 md:ml-auto"
-                        preload />
-                    <NuxtImg src="/images/blank.png"
-                        class="w-44 h-[150px] rounded-2xl object-cover md:-mt-20 mx-auto min-[450px]:mr-0 md:mx-auto"
-                        preload />
-                    <NuxtImg src="/images/blank.png"
-                        class="w-44 h-[150px] rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mr-0" preload />
-                    <!-- <img src="/images/blank.png"
-                        class="w-44 h-[150px] rounded-2xl object-cover md:mt-20 mx-auto min-[450px]:mr-0" />
-                    <img src="/images/blank.png"
-                        class="w-44 h-[150px] rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mx-auto" />
-                    <img src="/images/blank.png"
-                        class="w-44 h-[150px] rounded-2xl object-cover md:mt-20 mx-auto min-[450px]:mr-0 md:ml-0" />
-                    <img src="/images/blank.png"
-                        class="w-44 h-[150px] rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mr-0 md:ml-auto" />
-                    <img src="/images/blank.png"
-                        class="w-44 h-[150px] rounded-2xl object-cover md:-mt-20 mx-auto min-[450px]:mr-0 md:mx-auto" />
-                    <img src="/images/blank.png"
-                        class="w-44 h-[150px] rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mr-0" /> -->
-
                 </div>
             </div>
         </div>

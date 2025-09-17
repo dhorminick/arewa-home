@@ -130,7 +130,7 @@ export const ProductsData = [
   },
 ];
 
-export const booking_url = "https://dev.arewa-health.com/category/onboarding/";
+export const booking_url = "https://dev.arewa-health.com/onboarding/";
 export const EMAIL = "contact@arewa-health.com";
 export const CONTACT_EMAIL = "contact@arewa-health.com";
 export const ADDRESS = "Gartenstr, 19 14169 Berlin, Germany";

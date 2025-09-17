@@ -42,7 +42,7 @@
 </template>
 
 <script setup>
-import { FACEBOOK, INSTAGRAM, TIKTOK, WHATSAPP } from '~/utils/constants';
+import { FACEBOOK, INSTAGRAM, TIKTOK, WHATSAPP, booking_url } from '~/utils/constants';
 
 const toast = useToast()
 const { t } = useI18n();
@@ -58,9 +58,9 @@ const links = computed(() => [
     },
     {
         title: 'Legal', links: [
-            { url: '/', title: t('footer.privacy-policy') },
-            { url: '/', title: t('footer.terms') },
-            { url: '/', title: t('footer.hippa') },
+            { url: '/legal/privacy-policy', title: t('footer.privacy-policy') },
+            { url: '/legal/terms-of-service', title: t('footer.terms') },
+            { url: '/legal/imprint', title: t('footer.imprint') },
         ]
     },
     {
