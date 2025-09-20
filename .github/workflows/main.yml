@@ -1,0 +1,43 @@
+name: Publish to ALLINKL
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy to cPanel via FTP
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout the repo
+      - uses: actions/checkout@v4
+
+      # 2. Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 21 # or 20 if your app requires
+          cache: "npm"
+
+      # 3. Clean install with dependency rebuild
+          # rm -rf node_modules package-lock.json
+      - name: Clean install and rebuild
+        run: |
+          npm install
+          npm rebuild
+
+      # 4. Build Nuxt app (assumes Nuxt 3)
+      - name: Build Nuxt app
+        run: npm run generate
+
+      # 5. Upload to cPanel via FTP 
+      - name: Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          local-dir: .output/public/
