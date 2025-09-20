@@ -15,5 +15,6 @@ useSeoMeta({
     ogTitle: 'Transforming healthcare management with innovative solutions.',
     description: 'Transforming healthcare management with innovative solutions.',
     ogDescription: 'Transforming healthcare management with innovative solutions.',
+    ogImage: '/images/logo.png'
 });
 </script>

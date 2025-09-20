@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="min-h-screen p-[50px]">
+      <div class="flex gap-[10px] mb-[40px]">
+        <img />
+        <h1 class="w-full flex-1 text-center font-bold text-5xl">
+          Arewa Health
+        </h1>
+      </div>
+
+      <div class="flex flex-col gap-[20px]">
+        <div><strong>Email:</strong> contact@arewa-health.com</div>
+        <div>
+          <strong>Address:</strong> AREWA Health GmbH, Gartenstraße 19, 14169
+          Berlin
+        </div>
+
+        <div>
+          <div>
+            I hereby revoke the contract I concluded for the purchase of the
+            following goods / the provision of the following service:
+          </div>
+          <div class="min-h-[300px] border rounded-[5px]"></div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-[10px]">
+          <div>
+            <label
+              for="ordered_on"
+              :class="class"
+              class="block text-sm font-medium text-gray-700"
+              >Ordered On:</label
+            >
+            <input
+              id="ordered_on"
+              type="text"
+              class="w-full mt-1 mb-3 p-2 border border-gray-300 outline-none rounded-[5px]"
+            />
+          </div>
+
+          <!--  -->
+          <div>
+            <label
+              for="recieved_on"
+              :class="class"
+              class="block text-sm font-medium text-gray-700"
+              >Recieved On:</label
+            >
+            <input
+              id="recieved_on"
+              type="text"
+              class="w-full mt-1 mb-3 p-2 border border-gray-300 outline-none rounded-[5px]"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label
+            for="ordered_on"
+            :class="class"
+            class="block text-sm font-medium text-gray-700"
+            >Name of the Customer:</label
+          >
+          <input
+            id="ordered_on"
+            type="text"
+            class="w-full mt-1 mb-3 p-2 border border-gray-300 outline-none rounded-[5px]"
+          />
+        </div>
+
+        <div>
+          <label
+            for="ordered_on"
+            :class="class"
+            class="block text-sm font-medium text-gray-700"
+            >Address of the Customer:</label
+          >
+          <input
+            id="ordered_on"
+            type="text"
+            class="w-full mt-1 mb-3 p-2 border border-gray-300 outline-none rounded-[5px]"
+          />
+        </div>
+
+        <div class="flex justify-between gap-[10px] mt-[70px]">
+          <div class="w-[300px]">
+            <div class="w-full border-b-[1px]"></div>
+            <div class="w-full text-center">Date</div>
+          </div>
+          <div class="w-[300px]">
+            <div class="w-full border-b-[1px]"></div>
+            <div class="w-full text-center">Signature</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

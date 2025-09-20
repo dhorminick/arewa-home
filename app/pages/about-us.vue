@@ -59,9 +59,9 @@ const history = ref([
 const gallery = [
     {
         img: [
-            '/images/gallery/01.jpg',
+            '/images/gallery/01.JPG',
             '/images/gallery/02.png',
-            '/images/gallery/03.jpg',
+            '/images/gallery/03.JPG',
             '/images/gallery/04.png',
         ]
     },

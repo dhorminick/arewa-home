@@ -22,7 +22,14 @@
             </div>
         </div>
         <div class="hidden justify-center items-center flex-1 relative sm:flex min-h-[400px]">
-            <NuxtImg src="/images/hero.avif" class="h-full ..rounded-full w-full object-center" preload />
+            <!-- <NuxtImg src="/images/hero.avif" class="h-full ..rounded-full w-full object-center" preload /> -->
+            <NuxtImg src="/images/hero.avif" placeholder="blur" class="h-full ..rounded-full w-full object-center"
+                preload :custom="true" v-slot="{ src, isLoaded, imgAttrs }">
+                <img v-if="isLoaded" v-bind="imgAttrs" :src="src">
+
+                <!-- Show a placeholder while loading -->
+                <img v-else src="/images/blur-hero.webp" alt="Image">
+            </NuxtImg>
             <div
                 class="rounded-[10px] p-[15px] bg-white flex flex-col justify-center items-center absolute bottom-[70px] left-0">
                 Dr. Oyedupe O. Gläsmann
@@ -66,37 +73,41 @@
         <div v-for="(item, idx) in projects" :key="idx" class="py-[70px]">
             <div class="grid gap-[50px] grid-cols-1 sm:grid-cols-2"
                 :class="idx % 2 !== 0 ? 'sm:[&>*:first-child]:order-2 sm:[&>*:last-child]:order-1' : ''">
-                <div>
-                    <TextLabel :text="item.tag" class="!border-l-primary" />
-                    <h1 class="text-4xl font-bold mb-[30px] mt-[10px]">{{ item.header }}</h1>
-                    <div class="flex flex-col gap-[10px]">
-                        <p class="text-justify">{{ item.summary }}</p>
-                    </div>
-                    <div class="mt-[20px]">
-                        <h4 class="font-bold mb-[10px]">Features:</h4>
+                <div class="flex justify-center items-center">
+                    <div>
+                        <TextLabel :text="item.tag" class="!border-l-primary" />
+                        <h1 class="text-4xl font-bold mb-[30px] mt-[10px]">{{ item.header }}</h1>
                         <div class="flex flex-col gap-[10px]">
-                            <div v-for="(i, idx_i) in item.features" :key="idx_i" class="flex gap-[10px] items-center">
-                                <i class="pi pi-check"></i>
-                                <span>{{ i }}</span>
+                            <p class="text-justify">{{ item.summary }}</p>
+                        </div>
+                        <div class="mt-[20px]">
+                            <h4 class="font-bold mb-[10px]">Features:</h4>
+                            <div class="flex flex-col gap-[10px]">
+                                <div v-for="(i, idx_i) in item.features" :key="idx_i"
+                                    class="flex gap-[10px] items-center">
+                                    <i class="pi pi-check"></i>
+                                    <span>{{ i }}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="mt-[50px]">
-                        <NuxtLink :to="item.url">
-                            <ButtonCustom label="Learn More" primary="true" input-class="w-max" size="lg"
-                                icon="angle-right" />
-                        </NuxtLink>
+                        <div class="mt-[50px]">
+                            <NuxtLink :to="item.url">
+                                <ButtonCustom label="Learn More" primary="true" input-class="w-max" size="lg"
+                                    icon="angle-right" />
+                            </NuxtLink>
+                        </div>
+
                     </div>
                 </div>
                 <div>
                     <div v-if="idx === 0" class="gap-[10px] w-full grid sm:grid-cols-2">
-                        <NuxtImg :src="item.images[0]" :alt="item.header"
-                            class="w-full max-h-[500px] object-contan rounded-[10px]" preload />
+                        <NuxtImg :src="item.images[0]" :alt="item.header" class="w-full rounded-[10px] shadow-md"
+                            preload />
                         <NuxtImg :src="item.images[1]" :alt="item.header"
-                            class="w-full sm:block hidden max-h-[500px] object-contan rounded-[10px]" preload />
+                            class="w-full sm:block hidden shadow-md rounded-[10px]" preload />
                     </div>
                     <NuxtImg v-else :src="item.image" :alt="item.header"
-                        class="max-h-[500px] object-contan rounded-[10px]" preload />
+                        class="max-h-[600px] object-cover rounded-[10px] shadow-md" preload />
                 </div>
             </div>
         </div>
@@ -131,7 +142,7 @@
         </div>
     </section>
 
-    <section class="pad py-[100px] bg-gray-50" id="faqs">
+    <section class="pad py-[100px] bg-gray-50 scroll-mt-[50px]" id="faqs">
         <div class="mx-[10px] mb-[50px]">
             <TextLabel text="faq's" />
             <h1 class="text-4xl font-bold mb-[30px] mt-[10px]">Frequently Asked Questions</h1>

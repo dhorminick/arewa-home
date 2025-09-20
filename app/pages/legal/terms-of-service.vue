@@ -1,9 +1,9 @@
 <template>
-    <div class="p-[50px]">
+    <section class="pad py-[50px] legal">
         <h1 class="w-full text-center font-bold text-4xl sm:text-5xl">AREWA Health GmbH </h1>
 
         <div>
-            <h2 class="header">1. Cancellation policy</h2>
+            <h2 class="header">Cancellation policy</h2>
 
             <div class="flex flex-col gap-[20px] mt-[20px]">
                 <div>
@@ -43,12 +43,12 @@
             </div>
         </div>
         <div class="mt-[30px]">
-            <h2 class="header">2. Sample cancellation form</h2>
+            <h2 class="header">Sample cancellation form</h2>
+            <div>(If you wish to cancel the contract, please fill out this form and return it.)</div>
 
+            <div>
 
+            </div>
         </div>
-    </div>
+    </section>
 </template>
-
-<script setup>
-</script>

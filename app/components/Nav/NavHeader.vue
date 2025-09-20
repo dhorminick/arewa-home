@@ -14,7 +14,7 @@
     </Drawer>
 
     <div class="w-full">
-        <div class="flex gap-[10px] justify-between items-center px-[20px] sm:px-[50px]">
+        <div class="flex gap-[10px] justify-between items-center px-[20px] sm:px-[100px]">
             <div class="flex-1 hidden sm:flex gap-[20px]">
                 <a class="hover:underline text-[80%]" v-for="(item, idx) in heading" :key="idx" :href="item.url"
                     target="_blank">{{ item.title }}</a>

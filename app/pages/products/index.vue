@@ -6,28 +6,29 @@
     <section class="pad py-[100px]" v-for="(item, idx) in ProductsData" :key="idx">
         <div class="grid gap-[50px] grid-cols-1 sm:grid-cols-2"
             :class="idx % 2 !== 0 ? 'sm:[&>*:first-child]:order-2 sm:[&>*:last-child]:order-1' : ''">
-            <div>
-                <TextLabel :text="item.tag" />
-                <h1 class="text-4xl font-bold mb-[30px] mt-[10px]">{{ item.header }}</h1>
-                <div class="flex flex-col gap-[10px]">
-                    <p class="text-justify" v-for="(i, idx_i) in item.summary" :key="idx_i">{{ i }}</p>
-                </div>
-                <div class="mt-[50px]">
-                    <NuxtLink :to="item.url">
-                        <ButtonCustom label="Learn More" primary="true" input-class="w-max" size="lg"
-                            icon="angle-right" />
-                    </NuxtLink>
+            <div class="flex justify-center items-center">
+                <div>
+                    <TextLabel :text="item.tag" />
+                    <h1 class="text-4xl font-bold mb-[30px] mt-[10px]">{{ item.header }}</h1>
+                    <div class="flex flex-col gap-[10px]">
+                        <p class="text-justify" v-for="(i, idx_i) in item.summary" :key="idx_i">{{ i }}</p>
+                    </div>
+                    <div class="mt-[50px]">
+                        <NuxtLink :to="item.url">
+                            <ButtonCustom label="Learn More" primary="true" input-class="w-max" size="lg"
+                                icon="angle-right" />
+                        </NuxtLink>
+                    </div>
                 </div>
             </div>
             <div>
                 <div v-if="idx === 0" class="gap-[10px] w-full grid sm:grid-cols-2">
-                    <NuxtImg :src="item.images[6]" :alt="item.header"
-                        class="w-full max-h-[500px] object-contan rounded-[10px]" preload />
+                    <NuxtImg :src="item.images[6]" :alt="item.header" class="w-full rounded-[10px] shadow-md" preload />
                     <NuxtImg :src="item.images[11]" :alt="item.header"
-                        class="w-full sm:block hidden max-h-[500px] object-contan rounded-[10px]" preload />
+                        class="w-full sm:block hidden shadow-md rounded-[10px]" preload />
                 </div>
-                <NuxtImg v-else :src="item.image" :alt="item.header" class="max-h-[500px] object-contan rounded-[10px]"
-                    preload />
+                <NuxtImg v-else :src="item.image" :alt="item.header"
+                    class="max-h-[600px] shadow-md object-coan rounded-[10px]" preload />
             </div>
         </div>
     </section>
