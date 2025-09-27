@@ -41,7 +41,7 @@ const contact = ref({
 })
 
 const more = [
-    { icon: 'phone', value: '+1-000-000-000', url: 'tel:+1-000-000-000' },
+    // { icon: 'phone', value: CONTACT_PHONE, url: `tel:${CONTACT_PHONE}` },
     { icon: 'envelope', value: CONTACT_EMAIL, url: `mailto:${CONTACT_EMAIL}` },
     { icon: 'map-marker', value: ADDRESS, url: 'https://maps.app.goo.gl/sve7aDCxZkVaM5by8' },
 ]

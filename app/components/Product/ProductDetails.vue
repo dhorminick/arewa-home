@@ -2,7 +2,7 @@
 
     <Dialog v-model:visible="visible" modal :draggable="false" position="top">
         <template #header><span></span></template>
-        <NuxtImg :src="current_img" preload />
+        <NuxtImg format="webp" loading="lazy" :src="current_img" preload />
     </Dialog>
 
     <section class="pad mb-[50px] mt-[30px] flex w-full gap-[20px]">
@@ -28,7 +28,7 @@
             <div ref="slider" class="flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar">
                 <div v-for="(img, idx) in data.images" :key="idx"
                     class="flex-shrink-0 w-[80%] sm:w-[45%] lg:w-[30%] snap-center rounded-xl overflow-hidden shadow-lg py-[20px]">
-                    <NuxtImg :src="img" alt="App snapshot" @click="setPreview(img)"
+                    <NuxtImg format="webp" loading="lazy" :src="img" alt="App snapshot" @click="setPreview(img)"
                         class="w-full h-auto object-cover cursor-pointer" preload />
                 </div>
             </div>

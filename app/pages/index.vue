@@ -3,9 +3,9 @@
         <div class="sm:w-[60%] h-full sm:pt-[100px] pt-[30px] w-full flex flex-col gap-[10px] text-white">
             <TextLabel text="Arewa health" />
             <h1 class="font-[700] text-5xl sm:text-6xl mb-[10px] sm:mb-[30px] text-center sm:text-left">Transforming
-                <span class="text-secondary uppercase">healthcare</span> management with
-                innovative
-                solutions.
+                <span class="text-secondary uppercase">healthcare</span> management <span class="sm:inline hidden">with
+                    innovative
+                    solutions.</span>
             </h1>
             <div class="text-center sm:text-left">The global, digital, and standardized documentation system for a
                 healthy and safe pregnancy.</div>
@@ -22,7 +22,8 @@
             </div>
         </div>
         <div class="hidden justify-center items-center flex-1 relative sm:flex min-h-[400px]">
-            <NuxtImg src="/images/hero.avif" class="h-full ..rounded-full w-full object-center" preload />
+            <NuxtImg src="/images/hero.avif" format="webp" loading="lazy"
+                class="h-full ..rounded-full w-full object-center" preload />
             <!-- <NuxtImg src="/images/hero.avif" placeholder="blur" class="h-full ..rounded-full w-full object-center"
                 preload :custom="true" v-slot="{ src, isLoaded, imgAttrs }">
                 <img v-if="isLoaded" v-bind="imgAttrs" :src="src">
@@ -38,7 +39,7 @@
     </section>
 
     <section class="pad py-[50px]">
-        <Splitter>
+        <Splitter class="sm:flex-row flex-col flex">
             <SplitterPanel class="flex flex-col gap-[10px] items-center justify-center p-[50px]">
                 <!-- <div class="flex items-center gap-[10px]">
                     <i class="pi pi-lightbulb"></i> 
@@ -100,12 +101,12 @@
                 </div>
                 <div>
                     <div v-if="idx === 0" class="gap-[10px] w-full grid sm:grid-cols-2">
-                        <NuxtImg :src="item.images[0]" :alt="item.header" class="w-full rounded-[10px] shadow-md"
-                            preload />
-                        <NuxtImg :src="item.images[1]" :alt="item.header"
+                        <NuxtImg format="webp" loading="lazy" :src="item.images[0]" :alt="item.header"
+                            class="w-full rounded-[10px] shadow-md" preload />
+                        <NuxtImg format="webp" loading="lazy" :src="item.images[1]" :alt="item.header"
                             class="w-full sm:block hidden shadow-md rounded-[10px]" preload />
                     </div>
-                    <NuxtImg v-else :src="item.image" :alt="item.header"
+                    <NuxtImg format="webp" loading="lazy" v-else :src="item.image" :alt="item.header"
                         class="max-h-[600px] object-cover rounded-[10px] shadow-md" preload />
                 </div>
             </div>
@@ -118,24 +119,26 @@
             <h1 class="text-4xl font-bold mb-[30px] mt-[10px]">Join Arewa Health in a few mins</h1>
         </div>
 
-        <Stepper :value="num" class="basis-[50rem]">
-            <StepList>
-                <Step :value="1">Create your account</Step>
-                <Step :value="2">Trial Period</Step>
-                <Step :value="3">Onboarding</Step>
-                <Step :value="4">Done</Step>
-            </StepList>
-        </Stepper>
+        <div class="flex sm:flex-col flex-row">
+            <Stepper :value="num">
+                <StepList class="flex sm:flex-row flex-col">
+                    <Step :value="1"><span class="sm:block hidden">Create your account</span></Step>
+                    <Step :value="2"><span class="sm:block hidden">Trial Period</span></Step>
+                    <Step :value="3"><span class="sm:block hidden">Onboarding</span></Step>
+                    <Step class="sm:ml-0 ml-[-15px]" :value="4"><span class="sm:block hidden">Done</span></Step>
+                </StepList>
+            </Stepper>
 
-        <div class="mt-[30px] mx-[10px]">
-            <div class="grid gap-[20px] grid-cols-1 sm:grid-cols-2">
-                <div class="col-span-2">
-                    <h2 class="font-bold mb-[10px] text-[150%]">{{ current_step?.header }}</h2>
-                    <div>{{ current_step?.description }}</div>
-                </div>
-                <div class="hidden">
-                    <NuxtImg :src="current_step?.image" :alt="current_step?.header" class="w-full rounded-[10px]"
-                        preload />
+            <div class="sm:mt-[30px] sm:mx-[10px] sm:flex-none flex-1">
+                <div class="grid gap-[20px] grid-cols-1 sm:grid-cols-2">
+                    <div class="col-span-2">
+                        <h2 class="font-bold mb-[10px] text-[150%]">{{ current_step?.header }}</h2>
+                        <div>{{ current_step?.description }}</div>
+                    </div>
+                    <div class="hidden">
+                        <NuxtImg :src="current_step?.image" :alt="current_step?.header" class="w-full rounded-[10px]"
+                            preload />
+                    </div>
                 </div>
             </div>
         </div>
@@ -148,9 +151,11 @@
         </div>
         <Accordion :value="['0']" multiple>
             <AccordionPanel :value="idx" v-for="(item, idx) in faqs" :key="idx">
-                <AccordionHeader>{{ item.q }}</AccordionHeader>
+                <AccordionHeader>
+                    <h6 class="!font-bold text-primary">{{ item.q }}</h6>
+                </AccordionHeader>
                 <AccordionContent>
-                    <p class="m-0">
+                    <p class="m-0 font-[400] text-gray-500">
                         {{ item.a }}
                     </p>
                 </AccordionContent>
@@ -243,7 +248,7 @@ const faqs = ref([
     { q: 'What services does AREWA Health offer?', a: 'AREWA Health offers a comprehensive digital solution for pregnancy documentation, including digital patient records, mobile apps, community features, and premium services.' },
     { q: 'Where does the name AREWA Health come from?', a: 'The name comes from the Yoruba language and means "The entirety of the woman".' },
     { q: 'Who can use AREWA Health?', a: 'AREWA Health can be used by pregnant women, gynecologists, midwives, and other healthcare providers involved in prenatal care.' },
-    { q: 'In which languages is the app available?', a: 'The app is currently available in German, with plans for additional languages in the future.' },
+    { q: 'In which languages is the app available?', a: 'The app is currently available in German and English, with plans for additional languages in the future.' },
     { q: 'How secure are medical data?', a: 'We use end-to-end encryption and comply with all relevant data protection regulations (GDPR, HIPAA) to ensure the security of your medical data.' },
     { q: 'Are there costs for doctors and patients?', a: 'We offer various pricing plans, including free basic features and premium services for advanced features.' },
     { q: 'How can I request a demo?', a: 'You can request a demo through our contact form or contact us directly. We are happy to schedule an appointment for a personal demonstration.' },

@@ -20,10 +20,9 @@
                     target="_blank">{{ item.title }}</a>
             </div>
             <div class="sm:hidden flex-1"></div>
-            <select class="p-[5px] text-[80%] rounded-[5px] border outline-none">
-                <option>English</option>
-                <option>German</option>
-                <option>Spanish</option>
+            <select class="p-[5px] text-[80%] rounded-[5px] border outline-none" :value="locale"
+                @change="setLanguage(($event.target as HTMLSelectElement).value)">
+                <option v-for="(item, idx) in appLocales" :key="idx" :value="item.code">{{ item.name }}</option>
             </select>
         </div>
         <div :class="[
@@ -57,10 +56,12 @@
     </div>
 </template>
 
-<script setup>
-import { CONTACT_EMAIL } from '~/utils/constants';
+<script setup lang="ts">
+import { CONTACT_EMAIL, CONTACT_PHONE } from '~/utils/constants';
+import { useLanguage } from '~/composables/useLanguage';
 
-const { t } = useI18n();
+const { locale, setLanguage } = useLanguage();
+const { t, locales } = useI18n();
 const localePath = useLocalePath();
 
 const showMenu = ref(false)
@@ -73,8 +74,14 @@ const links = computed(() => [
 ])
 const heading = [
     { title: CONTACT_EMAIL, url: `mailto:${CONTACT_EMAIL}` },
-    { title: '+1-000-000-0000', url: 'tel:+1-000-000-0000' }
+    { title: CONTACT_PHONE, url: `tel:${CONTACT_PHONE}` }
 ]
+
+const appLocales = [
+    { code: 'en', name: 'English' },
+    { code: 'de', name: 'Deutsch' }
+]
+
 const isScrolled = ref(false)
 
 const handleScroll = () => {

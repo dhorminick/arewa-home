@@ -33,7 +33,7 @@
         <div class="flex sm:flex-row flex-col items-center justify-between gap-[10px]">
             <div class="flex gap-[10px]">
                 <NuxtLink v-for="(item, idx) in socials" :key="idx" :to="item.url">
-                    <i :class="`text-[20px] p-[5px] rounded-sm pi pi-${item.icon}`"></i>
+                    <i :class="`text-[25px] p-[5px] rounded-sm pi pi-${item.icon}`"></i>
                 </NuxtLink>
             </div>
             <div>&copy; AREWA HEALTH - 2025</div>

@@ -36,12 +36,16 @@
                 digitally, inclusively, and effectively!
             </div>
         </div>
-        <div class="row_container border">
+        <!-- <div class="row_container border">
             <div class="column" v-for="(item, idx) in gallery" :key="idx">
-                <!-- <img v-for="(i, idx) in item.img" :key="idx" alt="Gallery Image" :src="i" class="w-[100%]"
-                    loading="lazy" /> -->
-                <NuxtImg v-for="(i, idx) in item.img" :key="idx" alt="Gallery Image" :src="i" class="w-[100%]"
-                    preload />
+                <NuxtImg v-for="(i, idx) in item.img" :key="idx" alt="Gallery Image" format="webp" loading="lazy"
+                    :src="i" class="w-[100%]" preload />
+            </div>
+        </div> -->
+        <div class="grid_container">
+            <div v-for="(i, idx) in gallery_imgs" :key="idx" :class="i.style">
+                <NuxtImg alt="Gallery Image" format="webp" loading="lazy" :src="i.img"
+                    class="object-center object-cover w-[100%]" preload />
             </div>
         </div>
     </section>
@@ -56,41 +60,60 @@ const history = ref([
     'Founded in 2025, Gartenstraße - Berlin, Germany, we aim at transforming pregnancy care through innovative technology by creating a world where medical professionals can provide standardized, efficient, and accessible documentation globally, enhancing communication between healthcare providers and patients, improving maternal care worldwide.'
 ])
 
-const gallery = [
-    {
-        img: [
-            '/images/gallery/01.JPG',
-            '/images/gallery/02.png',
-            '/images/gallery/03.JPG',
-            '/images/gallery/04.png',
-        ]
-    },
-    {
-        img: [
+// const gallery = [
+//     {
+//         img: [
+//             '/images/gallery/01.JPG',
+//             '/images/gallery/02.png',
+//             '/images/gallery/03.JPG',
+//             '/images/gallery/04.png',
+//         ]
+//     },
+//     {
+//         img: [
 
-            '/images/gallery/05.png',
-            '/images/gallery/06.png',
-            '/images/gallery/07.png',
-            '/images/gallery/08.png',
-        ]
-    },
-    {
-        img: [
-            '/images/gallery/09.png',
-            '/images/gallery/10.png',
-            '/images/gallery/11.png',
-            '/images/gallery/12.jpg',
-        ]
-    },
-    {
-        img: [
+//             '/images/gallery/05.png',
+//             '/images/gallery/06.png',
+//             '/images/gallery/07.png',
+//             '/images/gallery/08.png',
+//         ]
+//     },
+//     {
+//         img: [
+//             '/images/gallery/09.png',
+//             '/images/gallery/10.png',
+//             '/images/gallery/11.png',
+//             '/images/gallery/12.jpg',
+//         ]
+//     },
+//     {
+//         img: [
 
-            '/images/gallery/13.png',
-            '/images/gallery/14.png',
-            '/images/gallery/09.png',
-            '/images/gallery/10.png',
-        ]
-    }
+//             '/images/gallery/13.png',
+//             '/images/gallery/14.png',
+//             '/images/gallery/09.png',
+//             '/images/gallery/10.png',
+//         ]
+//     }
+// ]
+
+const gallery_imgs = [
+    { style: 'big', img: '/images/gallery/01.JPG' },
+    { style: 'big', img: '/images/gallery/02.png' },
+    { style: 'big', img: '/images/gallery/03.JPG' },
+    { style: 'vertical', img: '/images/gallery/04.png' },
+    { style: 'big', img: '/images/gallery/05.png' },
+    { style: '', img: '/images/gallery/06.png' },
+    { style: '', img: '/images/gallery/07.png' },
+    { style: 'vertical', img: '/images/gallery/08.png' },
+    { style: 'vertical', img: '/images/gallery/09.png' },
+    { style: 'vertical', img: '/images/gallery/10.png' },
+    { style: 'vertical', img: '/images/gallery/11.png' },
+    { style: 'vertical', img: '/images/gallery/12.jpg' },
+    { style: 'vertical', img: '/images/gallery/13.png' },
+    { style: 'vertical', img: '/images/gallery/14.png' },
+    { style: 'vertical', img: '/images/gallery/09.png' },
+    { style: 'vertical', img: '/images/gallery/10.png' },
 ]
 
 const team = ref([
@@ -115,9 +138,8 @@ const team = ref([
     opacity: 0;
 }
 
-.column {
+/* .column {
     -ms-flex: 25%;
-    /* IE10 */
     flex: 25%;
     max-width: 25%;
     padding: 0 4px;
@@ -147,11 +169,35 @@ const team = ref([
 
 .row_container {
     display: -ms-flexbox;
-    /* IE10 */
     display: flex;
     -ms-flex-wrap: wrap;
-    /* IE10 */
     flex-wrap: wrap;
     padding: 0 4px;
+} */
+
+.grid_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 200px;
+    grid-gap: 5px;
+    grid-auto-flow: dense;
+}
+
+.grid_container img {
+    width: 100%;
+    height: 100%;
+}
+
+.horizontal {
+    grid-column: span 2;
+}
+
+.vertical {
+    grid-row: span 2;
+}
+
+.big {
+    grid-column: span 2;
+    grid-row: span 2;
 }
 </style>

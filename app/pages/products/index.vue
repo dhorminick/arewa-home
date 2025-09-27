@@ -23,11 +23,12 @@
             </div>
             <div>
                 <div v-if="idx === 0" class="gap-[10px] w-full grid sm:grid-cols-2">
-                    <NuxtImg :src="item.images[6]" :alt="item.header" class="w-full rounded-[10px] shadow-md" preload />
-                    <NuxtImg :src="item.images[11]" :alt="item.header"
+                    <NuxtImg format="webp" loading="lazy" :src="item.images[6]" :alt="item.header"
+                        class="w-full rounded-[10px] shadow-md" preload />
+                    <NuxtImg format="webp" loading="lazy" :src="item.images[11]" :alt="item.header"
                         class="w-full sm:block hidden shadow-md rounded-[10px]" preload />
                 </div>
-                <NuxtImg v-else :src="item.image" :alt="item.header"
+                <NuxtImg format="webp" loading="lazy" v-else :src="item.image" :alt="item.header"
                     class="max-h-[600px] shadow-md object-coan rounded-[10px]" preload />
             </div>
         </div>
