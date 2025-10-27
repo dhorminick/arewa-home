@@ -42,7 +42,7 @@
 </template>
 
 <script setup>
-import { FACEBOOK, INSTAGRAM, TIKTOK, WHATSAPP, booking_url } from '~/utils/constants';
+import { FACEBOOK, INSTAGRAM, TIKTOK, WHATSAPP, booking_url, login_url } from '~/utils/constants';
 
 const toast = useToast()
 const { t } = useI18n();
@@ -66,6 +66,7 @@ const links = computed(() => [
     {
         title: 'Authentication', links: [
             { url: booking_url, title: t('app.book-demo'), target: '_blank' },
+            { url: login_url, title: t('app.sign-in'), target: '_blank' }
         ]
     },
 

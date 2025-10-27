@@ -1,6 +1,7 @@
 {
   "app": {
-    "book-demo": "Book a Demo"
+    "book-demo": "Book a Demo",
+    "sign-in": "Sign In"
   },
   "header": {
     "home": "Home",

@@ -131,6 +131,7 @@ export const ProductsData = [
 ];
 
 export const booking_url = "https://dev.arewa-health.com/onboarding/";
+export const login_url = "https://dev.arewa-health.com/auth/signin/";
 export const EMAIL = "contact@arewa-health.com";
 export const CONTACT_EMAIL = "contact@arewa-health.com";
 export const CONTACT_PHONE = "";

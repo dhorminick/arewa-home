@@ -40,15 +40,19 @@
                     </NuxtLink>
                 </div>
 
-                <div class="sm:ml-[50px]">
-                    <a :href="booking_url" target="_blank">
+                <div class="sm:ml-[50px] flex gap-[10px]">
+                    <a :href="booking_url" target="_blank" class="sm:block hidden">
                         <ButtonCustom :label="t('app.book-demo')" input-class="w-max" size="lg" rounded="true" />
+                    </a>
+                    <a :href="login_url" target="_blank">
+                        <ButtonCustom :label="t('app.sign-in')" :primary="true" icon="user" input-class="w-max"
+                            size="lg" rounded="true" />
                     </a>
                 </div>
             </div>
             <div class="items-center justify-end sm:hidden flex gap-[10px]">
-                <a :href="booking_url" target="_blank">
-                    <ButtonCustom :label="t('app.book-demo')" input-class="w-max" size="lg" rounded="true" />
+                <a :href="login_url" target="_blank">
+                    <ButtonCustom :label="t('app.sign-in')" icon="user" input-class="w-max" size="lg" rounded="true" />
                 </a>
                 <i class="pi pi-bars cursor-pointer" @click="showMenu = true"></i>
             </div>
@@ -57,7 +61,7 @@
 </template>
 
 <script setup lang="ts">
-import { CONTACT_EMAIL, CONTACT_PHONE } from '~/utils/constants';
+import { CONTACT_EMAIL, CONTACT_PHONE, login_url, booking_url } from '~/utils/constants';
 import { useLanguage } from '~/composables/useLanguage';
 
 const { locale, setLanguage } = useLanguage();
