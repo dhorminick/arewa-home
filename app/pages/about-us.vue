@@ -60,43 +60,6 @@ const history = ref([
     'Founded in 2025, Gartenstraße - Berlin, Germany, we aim at transforming pregnancy care through innovative technology by creating a world where medical professionals can provide standardized, efficient, and accessible documentation globally, enhancing communication between healthcare providers and patients, improving maternal care worldwide.'
 ])
 
-// const gallery = [
-//     {
-//         img: [
-//             '/images/gallery/01.JPG',
-//             '/images/gallery/02.png',
-//             '/images/gallery/03.JPG',
-//             '/images/gallery/04.png',
-//         ]
-//     },
-//     {
-//         img: [
-
-//             '/images/gallery/05.png',
-//             '/images/gallery/06.png',
-//             '/images/gallery/07.png',
-//             '/images/gallery/08.png',
-//         ]
-//     },
-//     {
-//         img: [
-//             '/images/gallery/09.png',
-//             '/images/gallery/10.png',
-//             '/images/gallery/11.png',
-//             '/images/gallery/12.jpg',
-//         ]
-//     },
-//     {
-//         img: [
-
-//             '/images/gallery/13.png',
-//             '/images/gallery/14.png',
-//             '/images/gallery/09.png',
-//             '/images/gallery/10.png',
-//         ]
-//     }
-// ]
-
 const gallery_imgs = [
     { style: 'big', img: '/images/gallery/01.JPG' },
     { style: 'big', img: '/images/gallery/02.png' },
@@ -117,12 +80,10 @@ const gallery_imgs = [
 ]
 
 const team = ref([
-    { name: 'Ifedayo Princeton Oladipo', role: 'CEO & Co-Founder', img: '/images/ifedayo.webp', description: 'As CEO and co-founder of AREWA Health, I bring many years of experience in health technology. My vision is to improve and make prenatal care more accessible worldwide.' },
-    { name: 'Dr. Oyedupe O. Glasmann', role: 'Gynecologist & Co-Founder', img: '/images/oyedupe.webp', description: 'As a practicing gynecologist and co-founder, I understand the daily challenges in pregnancy care. AREWA Health develops solutions directly from practice.' },
+    { name: 'Ifedayo Princeton Oladipo', role: 'CEO & Co-Founder (Head of sales)', img: '/images/ifedayo.webp', description: 'As CEO and co-founder of AREWA Health, I bring many years of experience in health technology. My vision is to improve and make prenatal care more accessible worldwide.' },
+    { name: 'Dr. Oyedupe O. Glasmann', role: 'Gynecologist & Co-Founder (Medical Head)', img: '/images/oyedupe.webp', description: 'As a practicing gynecologist and co-founder, I understand the daily challenges in pregnancy care. AREWA Health develops solutions directly from practice.' },
     { name: 'Annika Gutsche', role: 'Data Analyst', img: '/images/annika.webp', description: 'I ensure that our platform enables data-driven decisions. Through intelligent analytical methods, we help doctors make better treatment decisions.' },
-    { name: 'Matti Quade', role: 'App Developer', img: '/images/matti.webp', description: 'As an app developer, I focus on translating complex medical workflows into intuitive mobile applications. Usability is my top priority.' },
-    { name: 'Erik Seferi', role: 'Backend Developer', img: '/images/erik.webp', description: 'I build the robust technical infrastructure that drives AREWA Health. Security, scalability, and reliability are the cornerstones of our platform.' },
-    { name: 'Silvestri Ndoj', role: 'Frontend Developer', img: '/images/ndoj.webp', description: 'I design the user interfaces that doctors and patients use daily. My goal is to present complex medical information clearly and accessibly.' },
+    { name: 'Dr. Stephanie Salzmann', role: 'International Business Development', img: '/images/profile/stephanie.jpg', description: '' },
 ])
 
 </script>
