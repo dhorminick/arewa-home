@@ -4,15 +4,16 @@
         <i :class="`pi pi-${data.icon}`" class="text-xl text-primary right-4 top-4 absolute"></i>
 
         <!-- Header -->
-        <h3 class="text-lg font-semibold mb-2">{{ data.header }}</h3>
+        <h3 class="text-lg font-semibold mb-2">{{ translate ? t(data.header) : data.header }}</h3>
 
         <!-- Description -->
         <p class="text-gray-600 text-sm leading-relaxed">
-            {{ data.description }}
+            {{ translate ? t(data.description) : data.description }}
         </p>
     </div>
 </template>
 
 <script setup>
-const props = defineProps(['data'])
+const props = defineProps(['data', 'translate'])
+const { t } = useI18n();
 </script>

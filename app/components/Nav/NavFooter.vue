@@ -3,12 +3,12 @@
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-[20px]">
             <div>
                 <div class="text-[150%] uppercase font-bold">Arewa Health</div>
-                <div>Transforming healthcare management with innovative solutions.</div>
+                <div>{{ t('footer.description') }}</div>
 
                 <form class="flex gap-[5px] items-center mt-[30px] w-full"
                     @submit.prevent="subscribeToNewsletter(e, crsf)">
-                    <InputTextCustom v-model="e" placeholder="Email Address..." input-class="!mb-0"
-                        label="Sign up for newsletter:" required="true" />
+                    <InputTextCustom v-model="e" :placeholder="t('footer.email')" input-class="!mb-0"
+                        :label="t('footer.newsletter')" required="true" />
                     <input type="text" :v-model="crsf" autocomplete="off" tabindex="-1"
                         style="position: absolute; left: -9999px;">
 
@@ -48,7 +48,7 @@ const toast = useToast()
 const { t } = useI18n();
 const links = computed(() => [
     {
-        title: 'Company', links: [
+        title: t('footer.headers.company'), links: [
             { title: t('footer.home'), url: '/' },
             { title: t('footer.about-us'), url: '/about-us/' },
             { title: t('footer.products'), url: '/products/' },
@@ -57,14 +57,14 @@ const links = computed(() => [
         ]
     },
     {
-        title: 'Legal', links: [
+        title: t('footer.headers.legal'), links: [
             { url: '/legal/privacy-policy', title: t('footer.privacy-policy') },
             { url: '/legal/terms-of-service', title: t('footer.terms') },
             { url: '/legal/imprint', title: t('footer.imprint') },
         ]
     },
     {
-        title: 'Authentication', links: [
+        title: t('footer.headers.auth'), links: [
             { url: booking_url, title: t('app.book-demo'), target: '_blank' },
             { url: login_url, title: t('app.sign-in'), target: '_blank' }
         ]

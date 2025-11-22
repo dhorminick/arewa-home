@@ -1,21 +1,19 @@
 <template>
-    <TextPageIntro header="Our Products"
-        description="A comprehensive digital solution for pregnancy documentation and patient communication"
-        page="Our Products" />
+    <TextPageIntro :header="t('product.header')" :description="t('product.description')" :page="t('product.header')" />
 
-    <section class="pad py-[100px]" v-for="(item, idx) in ProductsData" :key="idx">
+    <section class="pad py-[100px]" v-for="(item, idx) in products_data" :key="idx">
         <div class="grid gap-[50px] grid-cols-1 sm:grid-cols-2"
             :class="idx % 2 !== 0 ? 'sm:[&>*:first-child]:order-2 sm:[&>*:last-child]:order-1' : ''">
             <div class="flex justify-center items-center">
                 <div>
                     <TextLabel :text="item.tag" />
-                    <h1 class="text-4xl font-bold mb-[30px] mt-[10px]">{{ item.header }}</h1>
+                    <h1 class="text-4xl font-bold mb-[30px] mt-[10px]">{{ t(item.header) }}</h1>
                     <div class="flex flex-col gap-[10px]">
-                        <p class="text-justify" v-for="(i, idx_i) in item.summary" :key="idx_i">{{ i }}</p>
+                        <p class="text-justify" v-for="(i, idx_i) in item.summary" :key="idx_i">{{ t(i) }}</p>
                     </div>
                     <div class="mt-[50px]">
                         <NuxtLink :to="item.url">
-                            <ButtonCustom label="Learn More" primary="true" input-class="w-max" size="lg"
+                            <ButtonCustom :label="t('home.learn-more')" primary="true" input-class="w-max" size="lg"
                                 icon="angle-right" />
                         </NuxtLink>
                     </div>
@@ -37,6 +35,10 @@
 </template>
 
 <script setup>
+import { ProductsData_Translated } from '~/utils/constants';
+const { t } = useI18n();
+const products_data = computed(() => ProductsData_Translated);
+
 // const products = ref([
 //     {
 //         tag: 'Arewa App', header: 'Arewa App', image: '/images/arewa-app.png', url: '/products/arewa-app', summary: [

@@ -2,22 +2,21 @@
     <section class="pad flex items-center w-full bg-primary h-[83dvh]">
         <div class="sm:w-[60%] h-full sm:pt-[100px] pt-[30px] w-full flex flex-col gap-[10px] text-white">
             <TextLabel text="Arewa health" />
-            <h1 class="font-[700] text-5xl sm:text-6xl mb-[10px] sm:mb-[30px] text-center sm:text-left">Transforming
-                <span class="text-secondary uppercase">healthcare</span> management <span class="sm:inline hidden">with
-                    innovative
-                    solutions.</span>
+            <h1 class="font-[700] text-5xl sm:text-6xl mb-[10px] sm:mb-[30px] text-center sm:text-left">
+                {{ t('home.landing-1') }}
+                <span class="text-secondary uppercase">{{ t('home.landing-2') }}</span> {{ t('home.landing-3') }} <span
+                    class="sm:inline hidden">{{ t('home.landing-4') }}</span>
             </h1>
-            <div class="text-center sm:text-left">The global, digital, and standardized documentation system for a
-                healthy and safe pregnancy.</div>
+            <div class="text-center sm:text-left">{{ t('home.summary') }}</div>
 
             <div
                 class="flex gap-[10px] mt-[30px] sm:mt-[50px] sm:justify-start sm:items-start justify-center items-center">
                 <NuxtLink :to="booking_url" target="_blank">
-                    <ButtonCustom label="Book a Demo" size="lg" rounded="true" input-class="w-max border-white border"
-                        primary="true" />
+                    <ButtonCustom :label="t('app.book-demo')" size="lg" rounded="true"
+                        input-class="w-max border-white border" primary="true" />
                 </NuxtLink>
                 <NuxtLink to="/contact-us/">
-                    <ButtonCustom label="Contact Us" size="lg" rounded="true" input-class="w-max" />
+                    <ButtonCustom :label="t('header.contact-us')" size="lg" rounded="true" input-class="w-max" />
                 </NuxtLink>
             </div>
         </div>
@@ -44,30 +43,23 @@
                 <!-- <div class="flex items-center gap-[10px]">
                     <i class="pi pi-lightbulb"></i> 
                 </div> -->
-                <h1 class="font-bold text-[150%]">Our Vision</h1>
+                <h1 class="font-bold text-[150%]">{{ t('home.vision') }}</h1>
                 <div>
-                    To revolutionize pregnancy care by creating a world where medical professionals can provide
-                    standardized, efficient, and accessible documentation globally. We envision a future where every
-                    expectant mother has access to consistent, high-quality care documentation, regardless of their
-                    location.
+                    {{ t('home.vision-statement') }}
                 </div>
             </SplitterPanel>
             <SplitterPanel class="flex flex-col gap-[10px] items-center justify-center p-[50px]">
-                <h1 class="font-bold text-[150%]">Our Mission</h1>
+                <h1 class="font-bold text-[150%]">{{ t('home.mission') }}</h1>
                 <div>
-                    To provide cutting-edge pregnancy documentation solutions that enhance communication between
-                    healthcare providers and patients. We're committed to improving maternal care worldwide through
-                    innovative technology, standardized processes, and seamless information sharing.
+                    {{ t('home.mission-statement') }}
                 </div>
             </SplitterPanel>
         </Splitter>
     </section>
 
     <section class="pad bg-gray-100 py-[100px]">
-        <h2 class="text-5xl text-center font-bold">AREWA Health Products</h2>
-        <div class="text-center mt-[10px] mb-[50px]">A comprehensive digital solution for pregnancy documentation and
-            patient
-            communication.
+        <h2 class="text-5xl text-center font-bold">{{ t('home.product-header') }}</h2>
+        <div class="text-center mt-[10px] mb-[50px]">{{ t('home.product-description') }}
         </div>
 
         <div v-for="(item, idx) in projects" :key="idx" class="py-[70px]">
@@ -81,7 +73,7 @@
                             <p class="text-justify">{{ item.summary }}</p>
                         </div>
                         <div class="mt-[20px]">
-                            <h4 class="font-bold mb-[10px]">Features:</h4>
+                            <h4 class="font-bold mb-[10px]">{{ t('home.features') }}:</h4>
                             <div class="flex flex-col gap-[10px]">
                                 <div v-for="(i, idx_i) in item.features" :key="idx_i"
                                     class="flex gap-[10px] items-center">
@@ -92,7 +84,7 @@
                         </div>
                         <div class="mt-[50px]">
                             <NuxtLink :to="item.url">
-                                <ButtonCustom label="Learn More" primary="true" input-class="w-max" size="lg"
+                                <ButtonCustom :label="t('home.learn-more')" primary="true" input-class="w-max" size="lg"
                                     icon="angle-right" />
                             </NuxtLink>
                         </div>
@@ -115,17 +107,18 @@
 
     <section class="pad py-[100px]">
         <div class="mx-[10px] mb-[50px]">
-            <TextLabel text="Steps" />
+            <TextLabel :text="t('home.steps')" />
             <h1 class="text-4xl font-bold mb-[30px] mt-[10px]">Join Arewa Health in a few mins</h1>
         </div>
 
         <div class="flex sm:flex-col flex-row">
             <Stepper :value="num">
                 <StepList class="flex sm:flex-row flex-col">
-                    <Step :value="1"><span class="sm:block hidden">Create your account</span></Step>
-                    <Step :value="2"><span class="sm:block hidden">Trial Period</span></Step>
-                    <Step :value="3"><span class="sm:block hidden">Onboarding</span></Step>
-                    <Step class="sm:ml-0 ml-[-15px]" :value="4"><span class="sm:block hidden">Done</span></Step>
+                    <Step :value="1"><span class="sm:block hidden">{{ t('home.step-1') }}</span></Step>
+                    <Step :value="2"><span class="sm:block hidden">{{ t('home.step-2') }}</span></Step>
+                    <Step :value="3"><span class="sm:block hidden">{{ t('home.step-3') }}</span></Step>
+                    <Step class="sm:ml-0 ml-[-15px]" :value="4"><span class="sm:block hidden">{{ t('home.step-4')
+                            }}</span></Step>
                 </StepList>
             </Stepper>
 
@@ -147,7 +140,7 @@
     <section class="pad py-[100px] bg-gray-50 scroll-mt-[50px]" id="faqs">
         <div class="mx-[10px] mb-[50px]">
             <TextLabel text="faq's" />
-            <h1 class="text-4xl font-bold mb-[30px] mt-[10px]">Frequently Asked Questions</h1>
+            <h1 class="text-4xl font-bold mb-[30px] mt-[10px]">{{ t('home.faqs-header') }}</h1>
         </div>
         <Accordion :value="['0']" multiple>
             <AccordionPanel :value="idx" v-for="(item, idx) in faqs" :key="idx">
@@ -163,9 +156,8 @@
         </Accordion>
     </section>
 
-    <TextCTA header="Smarter Care. Seamless Connection. Total Confidence"
-        description="From early preparation to postpartum support, we help you stay informed, organized, and empowered every step of the way."
-        label="Book Demo" :action="(() => navigateTo('/'))" />
+    <TextCTA :header="t('home.home-cta-header')" :description="t('home.home-cta-description')"
+        :label="t('app.book-demo')" :action="(() => navigateTo('/'))" />
 </template>
 
 <script setup lang="ts">
@@ -177,10 +169,10 @@ type Step = {
 }
 
 const steps = ref<Step[]>([
-    { header: 'Create your account', description: 'Create an account for your organization with our specialists and determine which version you need and which specific features(practice systems, medical devices) should be integrated.', image: '/images/step/01.avif' },
-    { header: 'Trial Period', description: 'Receive a free trial to familiarize yourself with the system.', image: '/images/step/02.avif' },
-    { header: 'Onboarding Process', description: 'Onboard your team (midwives, medical assistants, and physicians) and begin assigning roles.', image: '/images/step/03.avif' },
-    { header: 'Finish Up', description: 'You\'re ready to go.', image: '/images/step/04.avif' }
+    { header: t('home.step-1-header'), description: t('home.step-1-description'), image: '/images/step/01.avif' },
+    { header: t('home.step-2-header'), description: t('home.step-2-description'), image: '/images/step/02.avif' },
+    { header: t('home.step-3-header'), description: t('home.step-3-description'), image: '/images/step/03.avif' },
+    { header: t('home.step-4-header'), description: t('home.step-4-description'), image: '/images/step/04.avif' }
 ])
 
 const num = ref(1)
@@ -205,14 +197,14 @@ onBeforeUnmount(() => {
 const projects = ref([
     {
         tag: "Arewa App",
-        header: "Arewa App",
+        header: t('home.arewa-app'),
         url: "/products/arewa-app",
-        summary: 'AREWA Health is your complete digital companion for every stage of your pregnancy journey — from preparation to postpartum care.',
+        summary: t('home.app-description'),
         features: [
-            'Ultrasound images and medical findings directly in your app',
-            'Information brochures (text and videos) about the topic of pregnancy',
-            'Pre-fill the anamnesis form digitally',
-            'Have findings translated',
+            t('home.arewa-app-feature-1'),
+            t('home.arewa-app-feature-2'),
+            t('home.arewa-app-feature-3'),
+            t('home.arewa-app-feature-4'),
         ],
         images: [
             "/images/arewa-app/Home screen.png",
@@ -221,15 +213,15 @@ const projects = ref([
     },
     {
         tag: "IPD",
-        header: "International Pregnancy Document",
+        header: t('home.ipd'),
         image: "/images/ipd/Pregnancy Risks.png",
         url: "/products/ipd",
-        summary: 'Designed for both expectant mothers and healthcare professionals, it centralizes structured medical records, lifestyle tracking, and personalized counseling into one secure platform.',
+        summary: t('home.ipd-description'),
         features: [
-            'International Pregnancy Document (IPD)',
-            'Documenting medical findings',
-            'Interfaces to EMR, patient records, and other practice systems',
-            'Translation of findings for international patients',
+            t('home.ipd-feature-1'),
+            t('home.ipd-feature-2'),
+            t('home.ipd-feature-3'),
+            t('home.ipd-feature-4'),
         ],
         images: []
     }
@@ -245,13 +237,13 @@ watch(num, (n) => {
 })
 
 const faqs = ref([
-    { q: 'What services does AREWA Health offer?', a: 'AREWA Health offers a comprehensive digital solution for pregnancy documentation, including digital patient records, mobile apps, community features, and premium services.' },
-    { q: 'Where does the name AREWA Health come from?', a: 'The name comes from the Yoruba language and means "The entirety of the woman".' },
-    { q: 'Who can use AREWA Health?', a: 'AREWA Health can be used by pregnant women, gynecologists, midwives, and other healthcare providers involved in prenatal care.' },
-    { q: 'In which languages is the app available?', a: 'The app is currently available in German and English, with plans for additional languages in the future.' },
-    { q: 'How secure are medical data?', a: 'We use end-to-end encryption and comply with all relevant data protection regulations (GDPR, HIPAA) to ensure the security of your medical data.' },
-    { q: 'Are there costs for doctors and patients?', a: 'We offer various pricing plans, including free basic features and premium services for advanced features.' },
-    { q: 'How can I request a demo?', a: 'You can request a demo through our contact form or contact us directly. We are happy to schedule an appointment for a personal demonstration.' },
-    { q: 'How long will the implementation take in my practice?', a: 'The implementation usually takes 2-4 weeks, depending on the size of your practice and the features you want. We will support you throughout the entire process.' },
+    { q: t('home.faqs-header-1'), a: t('home.faqs-description-1') },
+    { q: t('home.faqs-header-2'), a: t('home.faqs-description-2') },
+    { q: t('home.faqs-header-3'), a: t('home.faqs-description-3') },
+    { q: t('home.faqs-header-4'), a: t('home.faqs-description-4') },
+    { q: t('home.faqs-header-5'), a: t('home.faqs-description-5') },
+    { q: t('home.faqs-header-6'), a: t('home.faqs-description-6') },
+    { q: t('home.faqs-header-7'), a: t('home.faqs-description-7') },
+    { q: t('home.faqs-header-7'), a: t('home.faqs-description-8') },
 ])
 </script>

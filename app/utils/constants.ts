@@ -1,3 +1,116 @@
+export const ProductsData_Translated = [
+  {
+    tag: "Arewa App",
+    header: "product.arewa.header",
+    image: "/images/arewa-app/Home screen.png",
+    url: "/products/arewa-app",
+    summary: ["product.arewa.description-1"],
+    description: [
+      "product.arewa.description-1",
+      "product.arewa.description-2",
+      "product.arewa.description-3",
+    ],
+    features: [
+      {
+        icon: "mars",
+        header: "product.arewa.features.header-1",
+        description: "product.arewa.features.description-1",
+      },
+      {
+        icon: "objects-column",
+        header: "product.arewa.features.header-2",
+        description: "product.arewa.features.description-2",
+      },
+      {
+        icon: "calendar",
+        header: "product.arewa.features.header-3",
+        description: "product.arewa.features.description-3",
+      },
+      {
+        icon: "shield",
+        header: "product.arewa.features.header-4",
+        description: "product.arewa.features.description-4",
+      },
+      {
+        icon: "lightbulb",
+        header: "product.arewa.features.header-5",
+        description: "product.arewa.features.description-5",
+      },
+    ],
+    cta: {
+      header: "product.arewa.cta-header",
+      description: "product.arewa.cta-description",
+    },
+    images: [
+      "/images/arewa-app/Anamnesis form pt II.png",
+      "/images/arewa-app/Anamnesis form.png",
+      "/images/arewa-app/AREWA Guide pt II.png",
+      "/images/arewa-app/AREWA Guide.png",
+      "/images/arewa-app/AREWA Schwangerschaftsbegleiter.png",
+      "/images/arewa-app/Geburtsterminrechner.png",
+      "/images/arewa-app/Home screen.png",
+      "/images/arewa-app/Medical reports pt II.png",
+      "/images/arewa-app/Medical Reports.png",
+      "/images/arewa-app/Nutrition in Pregnancy.png",
+      "/images/arewa-app/Pregnancy Tools pt II.png",
+      "/images/arewa-app/Pregnancy Tools.png",
+      "/images/arewa-app/Schwangerschaftsverlauf.png",
+    ],
+  },
+  {
+    tag: "IPD",
+    header: "product.ipd.header",
+    image: "/images/ipd/Pregnancy Risks.png",
+    url: "/products/ipd",
+    summary: ["product.ipd.description-1"],
+    description: ["product.ipd.description-1", "product.ipd.description-2"],
+    features: [
+      {
+        icon: "crown",
+        header: "product.ipd.features.header-1",
+        description: "product.ipd.features.description-1",
+      },
+      {
+        icon: "map-marker",
+        header: "product.ipd.features.header-2",
+        description: "product.ipd.features.description-2",
+      },
+      {
+        icon: "chart-bar",
+        header: "product.ipd.features.header-3",
+        description: "product.ipd.features.description-3",
+      },
+      {
+        icon: "heart",
+        header: "product.ipd.features.header-4",
+        description: "product.ipd.features.description-4",
+      },
+      {
+        icon: "question",
+        header: "product.ipd.features.header-5",
+        description: "product.ipd.features.description-5",
+      },
+    ],
+    cta: {
+      header: "product.ipd.cta-header",
+      description: "product.ipd.cta-description",
+    },
+    images: [
+      "/images/ipd/Complete overview.png",
+      "/images/ipd/Family History.png",
+      "/images/ipd/General History.png",
+      "/images/ipd/Graphs.png",
+      "/images/ipd/Gravidogramm_Antenatal Care.png",
+      // "/images/ipd/International Pregnancy Document.png",
+      "/images/ipd/Laboratory Tests.png",
+      "/images/ipd/Patient overview.png",
+      "/images/ipd/Postpartum.png",
+      "/images/ipd/Pregnancy Risks.png",
+      "/images/ipd/Ultrasound.png",
+    ],
+  },
+];
+
 export const ProductsData = [
   {
     tag: "Arewa App",

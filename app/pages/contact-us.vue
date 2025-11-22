@@ -1,7 +1,7 @@
 <template>
     <section class="py-[75px] pad">
-        <TextLabel text="Need Help?" />
-        <h1 class="text-5xl font-bold mb-[50px] mt-[10px]">Contact us or schedule an appointment</h1>
+        <TextLabel :text="t('contact.help')" />
+        <h1 class="text-5xl font-bold mb-[50px] mt-[10px]">{{ t('contact.header') }}</h1>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-[20px]">
             <div class="flex flex-col gap-[20px]">
                 <div v-for="(i, idx) in more" :key="idx" class="flex gap-[30px] items-center">
@@ -10,13 +10,15 @@
                 </div>
             </div>
             <form @submit.prevent="sendContactMail(contact)">
-                <InputTextCustom label="Name:" v-model="contact.name" />
-                <InputTextCustom type="email" label="Email Address:" v-model="contact.email" />
+                <InputTextCustom :label="t('contact.form.name')" v-model="contact.name" required="true" />
+                <InputTextCustom type="email" :label="t('contact.form.email')" v-model="contact.email"
+                    required="true" />
                 <div class="grid grid-cols-1 gap-[10px] sm:grid-cols-2">
-                    <InputTextCustom label="Telephone number:" v-model="contact.telephone" />
-                    <InputTextCustom type="date" label="Select Date:" v-model="contact.date" />
+                    <InputTextCustom :label="t('contact.form.phone')" v-model="contact.telephone" required="true" />
+                    <InputTextCustom type="date" :label="t('contact.form.date')" v-model="contact.date"
+                        required="true" />
                 </div>
-                <InputTextAreaCustom label="Message:" v-model="contact.message" />
+                <InputTextAreaCustom :label="t('contact.form.message')" v-model="contact.message" required="true" />
                 <input type="text" :v-model="contact.crsf" autocomplete="off" tabindex="-1"
                     style="position: absolute; left: -9999px;">
                 <div class="mt-[10px]">
@@ -30,6 +32,7 @@
 <script setup>
 import { ADDRESS, CONTACT_EMAIL } from '~/utils/constants';
 const toast = useToast()
+const { t } = useI18n();
 
 const contact = ref({
     name: '',

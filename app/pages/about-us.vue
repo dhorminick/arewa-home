@@ -1,13 +1,11 @@
 <template>
-    <TextPageIntro header="About us"
-        description="Meet the experts behind our mission to revolutionize the documentation of prenatal care"
-        page="About Us" />
+    <TextPageIntro :header="t('about.header')" :description="t('about.description')" :page="t('about.header')" />
 
     <section class="pad py-[100px]">
         <div class="grid gap-[50px] grid-cols-1 sm:grid-cols-2">
             <div class="col-span-2">
-                <TextLabel text="learn about us" />
-                <h1 class="text-4xl font-bold mb-[30px] mt-[10px]">Our History</h1>
+                <TextLabel :text="t('about.learn-about-us')" />
+                <h1 class="text-4xl font-bold mb-[30px] mt-[10px]">{{ t('about.our-history') }}</h1>
                 <div class="flex flex-col gap-[10px]">
                     <p class="text-justify" v-for="(item, idx) in history" :key="idx">{{ item }}</p>
                 </div>
@@ -16,9 +14,8 @@
     </section>
 
     <section class="pad py-[100px] bg-gray-50">
-        <h2 class="text-5xl text-center font-bold">Meet The Team Behind AREWA Health</h2>
-        <div class="text-center mt-[10px]">Meet the experts behind our mission to revolutionize the documentation of
-            prenatal care
+        <h2 class="text-5xl text-center font-bold">{{ t('about.meet-the-team-header') }}</h2>
+        <div class="text-center mt-[10px]">{{ t('about.meet-the-team-description') }}
         </div>
 
         <div class="mt-[70px] grid grid-cols-1 sm:grid-cols-3 gap-[20px]">
@@ -28,12 +25,10 @@
 
     <section class="pad py-[100px]">
         <div>
-            <TextLabel text="our development process" />
-            <h1 class="text-5xl font-bold mt-[10px] mb-[10px]">Building Arewa Health</h1>
-            <div class="w-full sm:max-w-[1000px] mb-[50px]">
-                Built on over 30 years of experience from Dr. Gläsmann, and a total contribution of over 120 experts in
-                gynecology and obstetrics, <br>Arewa Health combines experience and structures to design pregnancy care
-                digitally, inclusively, and effectively!
+            <TextLabel :text="t('about.development-process')" />
+            <h1 class="text-5xl font-bold mt-[10px] mb-[10px]">{{ t('about.building-us') }}</h1>
+            <div class="w-full sm:max-w-[1100px] mb-[50px]">
+                {{ t('about.building-description-1') }} <br>{{ t('about.building-description-2') }}
             </div>
         </div>
         <!-- <div class="row_container border">
@@ -50,14 +45,15 @@
         </div>
     </section>
 
-    <TextCTA header="Book a Demo" description="Are you ready to change the future of pregnancy documentation?"
-        label="Book Demo" :action="(() => navigateTo(booking_url))" />
+    <TextCTA :header="t('about.cta-header')" :description="t('about.cta-description')" :label="t('app.book-demo')"
+        :action="(() => navigateTo(booking_url))" />
 </template>
 
 <script setup>
+const { t } = useI18n();
 const history = ref([
-    'Arewa health is a global, digital, and standardized documentation system for a healthy and safe pregnancy, aiming at helping doctors document medical findings and send them to their pregnant patients.',
-    'Founded in 2025, Gartenstraße - Berlin, Germany, we aim at transforming pregnancy care through innovative technology by creating a world where medical professionals can provide standardized, efficient, and accessible documentation globally, enhancing communication between healthcare providers and patients, improving maternal care worldwide.'
+    t('about.history-1'),
+    t('about.history-2')
 ])
 
 const gallery_imgs = [

@@ -6,19 +6,19 @@
     </Dialog>
 
     <section class="pad mb-[50px] mt-[30px] flex w-full gap-[20px]">
-        <NuxtLink class="bb" to="/">Home</NuxtLink>
+        <NuxtLink class="bb" to="/">{{ t("header.home") }}</NuxtLink>
         <span>-</span>
-        <NuxtLink class="bb" to="/products/">Our Products</NuxtLink>
+        <NuxtLink class="bb" to="/products/">{{ t("product.header") }}</NuxtLink>
         <span>-</span>
-        <NuxtLink>{{ data.header }}</NuxtLink>
+        <NuxtLink>{{ t(data.header) }}</NuxtLink>
     </section>
 
     <section class="pad my-[100px]">
         <TextLabel :text="data.tag" />
-        <h2 class="text-5xl font-bold mt-[10px]">{{ data.header }}</h2>
+        <h2 class="text-5xl font-bold mt-[10px]">{{ t(data.header) }}</h2>
 
         <div class="flex flex-col gap-[10px] mt-[50px]">
-            <p class="text-justify" v-for="(i, idx_i) in data.description" :key="idx_i">{{ i }}</p>
+            <p class="text-justify" v-for="(i, idx_i) in data.description" :key="idx_i">{{ t(i) }}</p>
         </div>
     </section>
 
@@ -48,23 +48,24 @@
     </section>
 
     <section class="pad py-[100px] bg-gray-50">
-        <h2 class="text-5xl text-center font-bold">Features</h2>
+        <h2 class="text-5xl text-center font-bold">{{ t("home.features") }}</h2>
 
         <div class="mt-[50px] grid grid-cols-2 sm:grid-cols-3 gap-[20px] p-[20px]">
-            <CardForFeatures v-for="(item, idx) in data.features" :key="idx" :data="item" />
-            <CardForFeatures :data="{
+            <CardForFeatures :translate="true" v-for="(item, idx) in data.features" :key="idx" :data="item" />
+            <CardForFeatures :translate="false" :data="{
                 header: '...',
                 description: 'And much more...'
             }" />
         </div>
     </section>
 
-    <TextCTA :header="data.cta.header || 'Book a Demo'"
-        :description="data.cta.description || 'Are you ready to change the future of pregnancy documentation?'"
-        label="Book Demo" :action="(() => navigateTo(booking_url))" />
+    <TextCTA :header="t(data.cta.header) || 'Book a Demo'"
+        :description="t(data.cta.description) || 'Are you ready to change the future of pregnancy documentation?'"
+        :label="t('app.book-demo')" :action="(() => navigateTo(booking_url))" />
 </template>
 
 <script setup>
+const { t } = useI18n();
 const props = defineProps(['data'])
 const visible = ref(false)
 const current_img = ref('')

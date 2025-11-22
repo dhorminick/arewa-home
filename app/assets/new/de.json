@@ -22,13 +22,13 @@
     "faqs": "FAQ's",
 
     "contact-us": "Kontakt",
-    "email": "E-Mail-Adresse...",
+
     "privacy-policy": "Datenschutzrichtlinie",
     "terms": "Nutzungsbedingungen",
     "imprint": "Impressum",
 
     "description": "Wir transformieren das Gesundheitsmanagement mit innovativen Lösungen.",
-    "newsletter": "Für den Newsletter anmelden:",
+    "newsletter": "Für den Newsletter anmelden",
 
     "headers": {
       "company": "Unternehmen",
@@ -246,11 +246,12 @@
 
     "header": "Kontaktiere uns oder vereinbare einen Termin",
     "form": {
-      "name": "Name:",
-      "email": "E-Mail-Adresse:",
-      "phone": "Telefonnummer:",
-      "date": "Datum auswählen:",
-      "message": "Nachricht:"
+      "name": "Name",
+
+      "email": "E-Mail-Adresse",
+      "phone": "Telefonnummer",
+      "date": "Datum auswählen",
+      "message": "Nachricht"
     }
   }
 }

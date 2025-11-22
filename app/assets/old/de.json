@@ -1,0 +1,23 @@
+{
+  "app": {
+    "book-demo": "Buchen Sie eine Demo",
+    "sign-in": "Anmelden"
+  },
+  "header": {
+    "home": "Heim",
+    "about-us": "Über uns",
+    "products": "Unsere Produkte",
+    "faqs": "FAQ's",
+    "contact-us": "Kontaktieren Sie uns"
+  },
+  "footer": {
+    "home": "Heim",
+    "about-us": "Über uns",
+    "products": "Unsere Produkte",
+    "faqs": "FAQ's",
+    "contact-us": "Kontaktieren Sie uns",
+    "privacy-policy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "imprint": "Impressum"
+  }
+}
