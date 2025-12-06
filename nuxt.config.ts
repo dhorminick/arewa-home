@@ -10,6 +10,8 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@primevue/nuxt-module",
     "@nuxt/image",
+    "@pinia/nuxt",
+    "pinia-plugin-persistedstate/nuxt",
   ],
   i18n: {
     // defaultLocale: "en",
@@ -35,5 +37,10 @@ export default defineNuxtConfig({
   },
   experimental: {
     payloadExtraction: false,
+  },
+  runtimeConfig: {
+    public: {
+      env: process.env.NODE_ENV || "development",
+    },
   },
 });

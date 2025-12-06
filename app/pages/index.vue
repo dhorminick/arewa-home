@@ -128,10 +128,10 @@
                         <h2 class="font-bold mb-[10px] text-[150%]">{{ current_step?.header }}</h2>
                         <div>{{ current_step?.description }}</div>
                     </div>
-                    <div class="hidden">
+                    <!-- <div class="hidden">
                         <NuxtImg :src="current_step?.image" :alt="current_step?.header" class="w-full rounded-[10px]"
                             preload />
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -165,14 +165,13 @@ const { t } = useI18n();
 type Step = {
     header: string;
     description: string;
-    image: string;
 }
 
-const steps = ref<Step[]>([
-    { header: t('home.step-1-header'), description: t('home.step-1-description'), image: '/images/step/01.avif' },
-    { header: t('home.step-2-header'), description: t('home.step-2-description'), image: '/images/step/02.avif' },
-    { header: t('home.step-3-header'), description: t('home.step-3-description'), image: '/images/step/03.avif' },
-    { header: t('home.step-4-header'), description: t('home.step-4-description'), image: '/images/step/04.avif' }
+const steps = computed<Step[]>(() => [
+    { header: t('home.step-1-header'), description: t('home.step-1-description') },
+    { header: t('home.step-2-header'), description: t('home.step-2-description') },
+    { header: t('home.step-3-header'), description: t('home.step-3-description') },
+    { header: t('home.step-4-header'), description: t('home.step-4-description') }
 ])
 
 const num = ref(1)
@@ -194,7 +193,7 @@ onBeforeUnmount(() => {
 })
 
 
-const projects = ref([
+const projects = computed(() => [
     {
         tag: "Arewa App",
         header: t('home.arewa-app'),
@@ -225,7 +224,8 @@ const projects = ref([
         ],
         images: []
     }
-])
+]);
+
 
 const updateStep = (n: number): Step => {
     const index = (n - 1) % steps.value.length
@@ -236,7 +236,7 @@ watch(num, (n) => {
     current_step.value = updateStep(n);
 })
 
-const faqs = ref([
+const faqs = computed(() => [
     { q: t('home.faqs-header-1'), a: t('home.faqs-description-1') },
     { q: t('home.faqs-header-2'), a: t('home.faqs-description-2') },
     { q: t('home.faqs-header-3'), a: t('home.faqs-description-3') },

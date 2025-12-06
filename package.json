@@ -12,8 +12,11 @@
   "dependencies": {
     "@nuxt/image": "^1.11.0",
     "@nuxtjs/tailwindcss": "^6.14.0",
+    "@pinia/nuxt": "^0.11.3",
     "@primeuix/themes": "^1.2.3",
     "nuxt": "^4.0.3",
+    "pinia": "^3.0.4",
+    "pinia-plugin-persistedstate": "^4.7.1",
     "primeicons": "^7.0.0",
     "primevue": "^4.3.9",
     "vue": "^3.5.18",
@@ -21,6 +24,7 @@
   },
   "devDependencies": {
     "@nuxtjs/i18n": "^10.1.0",
-    "@primevue/nuxt-module": "^4.3.9"
+    "@primevue/nuxt-module": "^4.3.9",
+    "@types/node": "^24.10.1"
   }
 }

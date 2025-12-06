@@ -22,7 +22,7 @@ jobs:
           cache: "npm"
 
       # 3. Clean install with dependency rebuild
-          # rm -rf node_modules package-lock.json
+      # rm -rf node_modules package-lock.json
       - name: Clean install and rebuild
         run: |
           npm install
@@ -30,9 +30,11 @@ jobs:
 
       # 4. Build Nuxt app (assumes Nuxt 3)
       - name: Build Nuxt app
+        env:
+          NODE_ENV: production
         run: npm run generate
 
-      # 5. Upload to cPanel via FTP 
+      # 5. Upload to cPanel via FTP
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
